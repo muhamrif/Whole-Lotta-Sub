@@ -52,7 +52,7 @@ public class Sandwich implements IPrice {
     }
 
     //TODO @AKHIL finish this method with proper logic
-    public void removeBread(){
+    public void removeBread(Bread bread){
 
     }
 
