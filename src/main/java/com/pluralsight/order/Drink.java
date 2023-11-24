@@ -4,8 +4,8 @@ import com.pluralsight.IPrice;
 import com.pluralsight.Size;
 
 public class Drink implements IPrice {
-    public Size size;
-    public String type;
+    private Size size;
+    private String type;
 
     public Drink(Size size, String type) {
         this.size = size;

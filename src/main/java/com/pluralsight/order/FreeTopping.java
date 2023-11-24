@@ -1,4 +1,9 @@
 package com.pluralsight.order;
 
-public class FreeTopping {
+import com.pluralsight.Size;
+
+public class FreeTopping extends Topping {
+    public FreeTopping(String type) {
+        super(type);
+    }
 }
