@@ -52,6 +52,21 @@ public class Sandwich implements IPrice {
     }
 
     //TODO @AKHIL finish this method with proper logic
+    public void removeBread(){
+
+    }
+
+    //TODO @AKHIL finish this method with proper logic
+    public void removeTopping(Topping topping){
+
+    }
+
+    //TODO @AKHIL finish this method with proper logic
+    public void addTopping(Topping topping){
+
+    }
+
+    //TODO @AKHIL finish this method with proper logic
     @Override
     public double getPrice(Size size) {
         return 0;
