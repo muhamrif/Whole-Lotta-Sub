@@ -1,0 +1,40 @@
+                    WholeLottaSub
+                    Date @ time
+                    Address
+                    Phone number
+Order#: XXXXXXXXX
+1 x small WholeLottaBurger
+    wheat bread
+    chicken
+    extra meat
+    american cheese
+    extra cheese
+    lettuce
+    onions
+    tomatoes
+    pickle
+    mayo
+    mustard
+1 x large sandwich
+    wheat bread
+    chicken
+    extra meat
+    american cheese
+    extra cheese
+    lettuce
+    onions
+    tomatoes
+    pickle
+    mayo
+    mustard
+1 x small Drink
+    Coke
+1 x small Drink
+    Coke
+1 x chips
+    Lays
+Subtotal: $XX.XX
+                Thank you for your order!
+
+
+
