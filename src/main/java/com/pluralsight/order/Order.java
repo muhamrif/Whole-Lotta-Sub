@@ -48,27 +48,34 @@ public class Order implements IPrice {
 
     //TODO @AKHIL finish this method with proper logic
     public void addSandwichToOrder(Sandwich sandwich){
+        sandwiches.add(sandwich);
 
     }
     //TODO @AKHIL finish this method with proper logic
     public void addDrinkToOrder(Drink drink){
+        drinks.add(drink);
 
     }
     //TODO @AKHIL finish this method with proper logic
-    public void addChipsToOrder(Chips chips){
+    public void addChipsToOrder(Chips chip){
+        chips.add(chip);
 
     }
 
     //TODO @AKHIL finish this method with proper logic
     public void removeSandwichToOrder(Sandwich sandwich){
+        sandwiches.remove(sandwich);
 
     }
     //TODO @AKHIL finish this method with proper logic
     public void removeDrinkToOrder(Drink drink){
+        drinks.remove(drink);
 
     }
     //TODO @AKHIL finish this method with proper logic
-    public void removeChipsToOrder(Chips chips){
+    public void removeChipsToOrder(Chips chip){
+        chips.remove(chip);
+
 
     }
 
