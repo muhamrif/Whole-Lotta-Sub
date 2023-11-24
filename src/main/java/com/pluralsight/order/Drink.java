@@ -1,7 +1,7 @@
 package com.pluralsight.order;
 
-import com.pluralsight.IPrice;
-import com.pluralsight.Size;
+import com.pluralsight.utils.IPrice;
+import com.pluralsight.utils.Size;
 
 public class Drink implements IPrice {
     private Size size;

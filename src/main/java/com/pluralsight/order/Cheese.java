@@ -1,6 +1,6 @@
 package com.pluralsight.order;
 
-import com.pluralsight.Size;
+import com.pluralsight.utils.Size;
 
 public class Cheese extends PremiumTopping {
     private Boolean extraCheese;
