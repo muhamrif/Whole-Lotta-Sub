@@ -58,11 +58,13 @@ public class Sandwich implements IPrice {
 
     //TODO @AKHIL finish this method with proper logic
     public void removeTopping(Topping topping){
+        toppings.remove(topping);
 
     }
 
     //TODO @AKHIL finish this method with proper logic
     public void addTopping(Topping topping){
+        toppings.add(topping);
 
     }
 
