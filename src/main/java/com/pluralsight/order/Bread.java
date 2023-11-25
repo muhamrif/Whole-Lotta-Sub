@@ -20,6 +20,7 @@ public class Bread implements IPrice {
 
     @Override
     public double getPrice(Size size) {
+        if (type.equals("No Bread")){return 0.0;}
        if (size.equals(Size.SMALL)){
            return 5.50;
        }else if(size.equals(Size.MEDIUM)){
