@@ -15,12 +15,14 @@ public class Order implements IPrice {
 
     private LocalDateTime checkoutTime;
     private double orderTotalPrice;
+    private int orderNumber;
 
     public Order(List<Sandwich> sandwiches, List<Drink> drinks, List<Chips> chips) {
         this.sandwiches = sandwiches;
         this.drinks = drinks;
         this.chips = chips;
         this.orderTotalPrice = getPrice(Size.SMALL);
+        this.orderNumber = (int) (Math.random() * 1000000);
     }
 
     public List<Sandwich> getSandwiches() {
@@ -61,6 +63,14 @@ public class Order implements IPrice {
 
     public void setOrderTotalPrice(double orderTotalPrice) {
         this.orderTotalPrice = orderTotalPrice;
+    }
+
+    public int getOrderNumber() {
+        return orderNumber;
+    }
+
+    public void setOrderNumber(int orderNumber) {
+        this.orderNumber = orderNumber;
     }
 
     public void addSandwichToOrder(Sandwich sandwich){
@@ -116,4 +126,5 @@ public class Order implements IPrice {
         }
         return totalPrice;
     }
+
 }

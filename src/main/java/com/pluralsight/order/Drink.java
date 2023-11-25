@@ -39,4 +39,11 @@ public class Drink implements IPrice {
             return 3.00;
         }
     }
+
+    @Override
+    public String toString() {
+        return "1 X Drink $" + getPrice(size) + "\n" +
+                "Size: " + size +"\n" +
+                "Brand: " + type + "\n";
+    }
 }

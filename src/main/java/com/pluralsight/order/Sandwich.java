@@ -3,6 +3,7 @@ package com.pluralsight.order;
 import com.pluralsight.utils.IPrice;
 import com.pluralsight.utils.Size;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Sandwich implements IPrice {
@@ -75,5 +76,40 @@ public class Sandwich implements IPrice {
             toppingPrice += topping.getPrice(size);
         }
         return breadPrice + toppingPrice;
+    }
+
+    @Override
+    public String toString() {
+
+        StringBuilder meat = new StringBuilder();
+        StringBuilder cheese = new StringBuilder();
+        StringBuilder freetoppings = new StringBuilder();
+
+        for (Topping topping : toppings) {
+            if (topping instanceof Meat) {
+                if ((((Meat) topping).getExtraMeat())) {
+                    meat.append("Extra ").append(topping.getType()).append(", ");
+                } else {
+                    meat.append(topping.getType()).append(", ");
+                }
+
+            } else if (topping instanceof Cheese) {
+                if ((((Cheese) topping).getExtraCheese())) {
+                    cheese.append("Extra ").append(topping.getType()).append(", ");
+                } else {
+                    cheese.append(topping.getType()).append(", ");
+                }
+            } else if (topping instanceof FreeTopping) {
+                freetoppings.append(topping.getType()).append(", ");
+            }
+        }
+
+        return "1 X Sandwich $" + getPrice(size) + "\n" +
+                "Size: " + size + "\n" +
+                "Bread: " + bread.getType() + "\n" +
+                "Meat: " + meat.toString() + "\n" +
+                "Cheese: " + cheese.toString() + "\n" +
+                "Free Toppings: " + freetoppings.toString() + "\n" +
+                "Toasted: " + (toasted?"yes":"no") + "\n";
     }
 }

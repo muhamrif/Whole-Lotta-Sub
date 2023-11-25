@@ -3,7 +3,7 @@
                     Address
                     Phone number
 Order#: XXXXXXXXX
-1 x small WholeLottaBurger
+1 small WholeLottaBurger
     wheat bread
     chicken
     extra meat
