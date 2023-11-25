@@ -22,4 +22,10 @@ public class Chips implements IPrice {
     public double getPrice(Size size) {
         return 1.50;
     }
+
+    @Override
+    public String toString() {
+        return "1 X Chips $" + getPrice(Size.SMALL) + "\n" +
+                "Brand: " + type + "\n";
+    }
 }
