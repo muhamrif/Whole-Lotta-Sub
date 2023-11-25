@@ -51,26 +51,29 @@ public class Sandwich implements IPrice {
         this.toasted = toasted;
     }
 
-    //TODO @AKHIL finish this method with proper logic
-    public void removeBread(Bread bread){
 
+    public void removeBread(Bread bread){
+        this.bread = new Bread("No Bread");
     }
 
-    //TODO @AKHIL finish this method with proper logic
+
     public void removeTopping(Topping topping){
         toppings.remove(topping);
 
     }
 
-    //TODO @AKHIL finish this method with proper logic
     public void addTopping(Topping topping){
         toppings.add(topping);
 
     }
 
-    //TODO @AKHIL finish this method with proper logic
     @Override
     public double getPrice(Size size) {
-        return 0;
+        double breadPrice = bread.getPrice(size);
+        double toppingPrice = 0.0;
+        for (Topping topping : toppings) {
+            toppingPrice += topping.getPrice(size);
+        }
+        return breadPrice + toppingPrice;
     }
 }
