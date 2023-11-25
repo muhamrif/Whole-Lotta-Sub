@@ -20,6 +20,7 @@ public class Order implements IPrice {
         this.sandwiches = sandwiches;
         this.drinks = drinks;
         this.chips = chips;
+        this.orderTotalPrice = getPrice(Size.SMALL);
     }
 
     public List<Sandwich> getSandwiches() {
@@ -46,6 +47,21 @@ public class Order implements IPrice {
         this.chips = chips;
     }
 
+    public LocalDateTime getCheckoutTime() {
+        return checkoutTime;
+    }
+
+    public void setCheckoutTime(LocalDateTime checkoutTime) {
+        this.checkoutTime = checkoutTime;
+    }
+
+    public double getOrderTotalPrice() {
+        return orderTotalPrice;
+    }
+
+    public void setOrderTotalPrice(double orderTotalPrice) {
+        this.orderTotalPrice = orderTotalPrice;
+    }
 
     public void addSandwichToOrder(Sandwich sandwich){
         sandwiches.add(sandwich);
@@ -88,17 +104,16 @@ public class Order implements IPrice {
 
     @Override
     public double getPrice(Size size) {
-       double totalPrice = 0.0;
+        double totalPrice = 0.0;
         for (Sandwich sandwich: sandwiches) {
-            totalPrice += sandwich.getPrice(size);
+            totalPrice += sandwich.getPrice(sandwich.getSize());
         }
         for (Drink drink: drinks) {
-            totalPrice += drink.getPrice(size);
+            totalPrice += drink.getPrice(drink.getSize());
         }
         for (Chips chip: chips) {
             totalPrice += chip.getPrice(size);
         }
-        orderTotalPrice= totalPrice;
         return totalPrice;
     }
 }

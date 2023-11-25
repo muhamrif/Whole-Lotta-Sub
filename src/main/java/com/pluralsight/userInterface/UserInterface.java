@@ -12,7 +12,7 @@ public class UserInterface {
     private List<Sandwich> sandwiches = new ArrayList<>();
     private List<Drink> drinks = new ArrayList<>();
     private List<Chips> chips = new ArrayList<>();
-    private Order order = new Order(sandwiches,drinks,chips);
+
 
 
     public UserInterface() {
@@ -58,7 +58,7 @@ public class UserInterface {
     }
 
     public void processCheckout(){
-
+        Order order = new Order(sandwiches,drinks,chips);
     }
 
 

@@ -36,5 +36,8 @@ Order#: XXXXXXXXX
 Subtotal: $XX.XX
                 Thank you for your order!
 
-
+Date @ time
+sandwich|size|bread|toppings|extraMeat|extraCheese
+Drink|size|drink
+Chips|brand
 
