@@ -79,13 +79,27 @@ public class UserInterface {
     }
 
 
-
-
     public void addSandwichMenu(){
+
 
     }
 
     public void addDrinkMenu(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Choose drink size:");
+        System.out.println("1. Small");
+        System.out.println("2. Medium");
+        System.out.println("3. Large");
+
+        int size = scanner.nextInt();
+
+        System.out.println("Choose drink flavor:");
+        System.out.println("1. Orange");
+        System.out.println("2. Apple");
+        System.out.println("3. Grape");
+
+        int flavor = scanner.nextInt();
+        System.out.println("You have ordered a " + size + " size " + flavor + " drink.");
 
     }
 
