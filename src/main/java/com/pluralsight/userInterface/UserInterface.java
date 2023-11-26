@@ -7,6 +7,7 @@ import com.pluralsight.order.Sandwich;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class UserInterface {
     private List<Sandwich> sandwiches = new ArrayList<>();
@@ -14,13 +15,36 @@ public class UserInterface {
     private List<Chips> chips = new ArrayList<>();
 
 
-
     public UserInterface() {
     }
 
-    public void HomeMenu(){
+    public void HomeMenu() {
+        Scanner scanner = new Scanner(System.in);
+        boolean running = true;
+        while (running) {
+            System.out.println("Choose an option:");
+            System.out.println("1 New Order");
+            System.out.println("2 Exit - exit the application");
 
+            System.out.print("Your Selection: ");
+            String input = scanner.next().trim();
+
+            switch (input) {
+                case "1":
+                    System.out.println("Processing new order");
+                    break;
+                case "2":
+                    System.out.println("Exiting the application");
+                    running = false;
+                    break;
+                default:
+                    System.out.println("Invalid option, please try again.");
+                    break;
+            }
+        }
     }
+
+
     public void addSandwichMenu(){
 
     }
