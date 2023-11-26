@@ -44,6 +44,42 @@ public class UserInterface {
         }
     }
 
+    public void orderMenu () {
+        Scanner scanner = new Scanner(System.in);
+        boolean running = true;
+        while (running) {
+            System.out.println("Choose an option:");
+            System.out.println("1 Add Sandwich");
+            System.out.println("2 Add Drink");
+            System.out.println("3 Add Chips");
+            System.out.println("4 Checkout");
+            System.out.println("0 Cancel Order");
+
+            System.out.print("Your Selection: ");
+            String input = scanner.next().trim();
+
+            switch (input) {
+                case "1":
+                    System.out.println("Processing Sandwich");
+                    break;
+                case "2":
+                    System.out.println("Processing Drink");
+                    break;
+                case "3":
+                    System.out.println("Processing Chips");
+                case "4":
+                    System.out.println("Processing Checkout");
+                case "0":
+                    System.out.println("Canceling order");
+                default:
+                    System.out.println("Invalid option, please try again.");
+                    break;
+            }
+        }
+    }
+
+
+
 
     public void addSandwichMenu(){
 
