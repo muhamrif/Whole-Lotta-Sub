@@ -196,6 +196,54 @@ public class UserInterface {
     }
 
     public void addChipsMenu(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("What Flavor of Chips would you Like to Add to your order?:");
+        System.out.println("1. plain");
+        System.out.println("2. BBQ");
+        System.out.println("3. salt and vinegar");
+        System.out.println("4. salt");
+        System.out.println("5. go back to menu");
+        boolean flag = true;
+
+        while (flag){
+
+            System.out.print("Your Selection: ");
+            String ChipsInput = input.next().trim();
+
+            switch (ChipsInput) {
+                case "1":
+                    Chips plain = new Chips("plain");
+                    chips.add(plain);
+                    System.out.println("Plain Chips added to order!");
+                    break;
+                case "2":
+                    Chips bbqChips = new Chips("BBQ");
+                    chips.add(bbqChips);
+                    System.out.println("BBQ Chips added to order!");
+                    break;
+                case "3":
+                    Chips saltAndVinegar = new Chips("salt and vinegar");
+                    chips.add(saltAndVinegar);
+                    System.out.println("salt and vinegar Chips added to order!");
+                    break;
+                case "4":
+                    Chips salt = new Chips("salt");
+                    chips.add(salt);
+                    System.out.println("Salt Chips added to order!");
+                    break;
+                case "5":
+                    System.out.println("Going back to menu");
+                    flag=false;
+                    break;
+                default:
+                    System.out.println("Invalid option, please try again.");
+                    break;
+            }
+
+        }
+
+
+
 
     }
 
