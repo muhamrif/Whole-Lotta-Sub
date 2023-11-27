@@ -159,8 +159,6 @@ public class UserInterface {
             }
         }
 
-        System.out.println("Your sandwich order is placed!");
-        input.close();
     }
 
 
