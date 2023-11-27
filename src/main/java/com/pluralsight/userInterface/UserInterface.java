@@ -22,7 +22,7 @@ public class UserInterface {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
         while (running) {
-            System.out.println("Choose an option:");
+            System.out.println(ConsoleColors.RED_BOLD_BRIGHT+"Choose an option:"+ConsoleColors.RESET);
             System.out.println("1 New Order");
             System.out.println("2 Exit - exit the application");
 
