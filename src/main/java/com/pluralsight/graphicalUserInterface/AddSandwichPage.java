@@ -169,6 +169,7 @@ public class AddSandwichPage {
 
                 JOptionPane.showMessageDialog(frame, "Added sandwich to the order:\n" + sandwich);
                 frame.setVisible(false);
+                frame.dispose();
                 AddOrderGui.run();
 
 
@@ -179,6 +180,7 @@ public class AddSandwichPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
+                frame.dispose();
                 AddOrderGui.run();
             }
         });

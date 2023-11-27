@@ -34,6 +34,7 @@ public class AddChipsPage {
                 AddOrderGui.chips.add(chips);
                 JOptionPane.showMessageDialog(frame, "Added " + selectedFlavor + " Chips to the order!");
                 frame.setVisible(false);
+                frame.dispose();
                 AddOrderGui.run();
             }
         });
@@ -42,6 +43,7 @@ public class AddChipsPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
+                frame.dispose();
                 AddOrderGui.run();
             }
         });

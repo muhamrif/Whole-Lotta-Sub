@@ -35,12 +35,14 @@ public class RemoveItemPage {
                 if (order.size() == 0) {
                     JOptionPane.showMessageDialog(frame, "No items to remove!");
                     frame.setVisible(false);
+                    frame.dispose();
                     AddOrderGui.run();
                 }else {
                     int index = itemComboBox.getSelectedIndex();
                     JOptionPane.showMessageDialog(frame, "Removed: "+ "\n" + order.get(index).toString());
                     order.remove(index);
                     frame.setVisible(false);
+                    frame.dispose();
                     AddOrderGui.run();
                 }
 
@@ -51,6 +53,7 @@ public class RemoveItemPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
+                frame.dispose();
                 AddOrderGui.run();
             }
         });
