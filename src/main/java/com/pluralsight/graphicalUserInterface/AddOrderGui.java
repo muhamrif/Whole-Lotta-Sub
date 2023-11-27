@@ -75,6 +75,7 @@ public class AddOrderGui {
                 }else {
                     JOptionPane.showMessageDialog(frame, "Order checked out!");
                     frame.setVisible(false);
+                    frame.dispose();
                     HomeMenuGUI.run();
                     finalOrder.setSandwiches(sandwich);
                     finalOrder.setDrinks(drinks);
@@ -93,6 +94,7 @@ public class AddOrderGui {
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(frame, "Order Cancelled : (");
                 frame.setVisible(false);
+                frame.dispose();
                 HomeMenuGUI.run();
                 order.clear();
                 drinks.clear();

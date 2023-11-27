@@ -39,6 +39,7 @@ public class AddDrinksPage {
                 AddOrderGui.drinks.add(drink);
                 JOptionPane.showMessageDialog(frame, "Added " + selectedSize.toString().toLowerCase() + " " + selectedFlavor + " to the order!");
                 frame.setVisible(false);
+                frame.dispose();
                 AddOrderGui.run();
             }
         });
@@ -47,6 +48,7 @@ public class AddDrinksPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
+                frame.dispose();
                 AddOrderGui.run();
             }
         });
