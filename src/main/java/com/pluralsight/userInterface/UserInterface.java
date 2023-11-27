@@ -1,9 +1,11 @@
 package com.pluralsight.userInterface;
 
+import com.pluralsight.graphicalUserInterface.AddDrinksPage;
 import com.pluralsight.order.Chips;
 import com.pluralsight.order.Drink;
 import com.pluralsight.order.Order;
 import com.pluralsight.order.Sandwich;
+import com.pluralsight.utils.Size;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -182,16 +184,78 @@ public class UserInterface {
         System.out.println("1. Small");
         System.out.println("2. Medium");
         System.out.println("3. Large");
+        System.out.println("4. Go back to home menu");
+        Size drinkSize = Size.SMALL;
+        while (true) {
+            System.out.println("Your Selection: ");
+            String DrinkInput = scanner.next().trim();
 
-        int size = scanner.nextInt();
+            switch (DrinkInput) {
+                case "1":
+                    drinkSize = Size.SMALL;
+                    System.out.println("Added small size");
+                    break;
+                case "2":
+                    drinkSize = Size.MEDIUM;
+                    System.out.println("Added medium size");
+                    break;
+                case "3":
+                    drinkSize = Size.LARGE;
+                    System.out.println("Added Large size");
+                    break;
+                case "4":
+                    System.out.println("Go back to home menu");
+                    break; 
+                default:
+                    System.out.println("Invalid size, please try again");
+                    break;
+            }
+                System.out.println("Choose your brand:");
+                System.out.println("1. Coco-Cola");
+                System.out.println("2. Mountain Dew");
+                System.out.println("3. Sprite");
+                System.out.println("4 Sparkling Dew");
+                System.out.println("5 Go back to home menu");
 
-        System.out.println("Choose drink flavor:");
-        System.out.println("1. Orange");
-        System.out.println("2. Apple");
-        System.out.println("3. Grape");
+                String SelectBrand;
 
-        int flavor = scanner.nextInt();
-        System.out.println("You have ordered a " + size + " size " + flavor + " drink.");
+                while (true){
+                    System.out.println("Your Brand Selection: ");
+                    String BrandInput = scanner.next().trim();
+
+                    switch (BrandInput) {
+                        case "1":
+                            Drink CocaCola = new Drink(drinkSize,"Coca-cola");
+                            drinks.add(CocaCola);
+                            System.out.println("Coca-cola was added to your order");
+                            break;
+                        case "2":
+                            Drink MountainDew = new Drink(drinkSize, "Mountain Dew");
+                            drinks.add(MountainDew);
+                            System.out.println("Mountain Dew was added to your order");
+                            break;
+                        case "3":
+                            Drink Sprite = new Drink(drinkSize,"Sprite");
+                            drinks.add(Sprite);
+                            System.out.println("Sprite was added to your order");
+                            break;
+                        case "4":
+                            Drink SparklingDew = new Drink(drinkSize,"Sparkling Dew");
+                            drinks.add(SparklingDew);
+                            System.out.println("Sparkling Dew was added to your order");
+                        case "5":
+                            System.out.println("Go back to home menu");
+                            break;
+                        default:
+                            System.out.println("Invalid option. Please try again");
+                            break;
+
+                    }
+
+                }
+
+
+        }
 
     }
 
