@@ -25,11 +25,9 @@ public class HomeMenuGUI {
         JPanel buttonPanel = new JPanel();
         JButton newOrderButton = new JButton("Start a New Order");
         newOrderButton.setBackground(Color.GREEN);
-        newOrderButton.setForeground(Color.GREEN);
         newOrderButton.setFocusPainted(true);
         JButton exitButton = new JButton("Exit");
         exitButton.setBackground(Color.RED);
-        exitButton.setForeground(Color.RED);
         exitButton.setFocusPainted(false);
 
         newOrderButton.addActionListener(new ActionListener() {

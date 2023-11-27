@@ -118,12 +118,10 @@ public class AddSandwichPage {
         JButton addToOrderButton = new JButton("Add to Order");
         addToOrderButton.setFont(new Font("Arial", Font.BOLD, 20));
         addToOrderButton.setBackground(Color.GREEN);
-        addToOrderButton.setForeground(Color.GREEN);
         addToOrderButton.setFocusPainted(true);
         JButton backToMenuButton = new JButton("Back to Menu");
         backToMenuButton.setFont(new Font("Arial", Font.BOLD, 20));
         backToMenuButton.setBackground(Color.RED);
-        backToMenuButton.setForeground(Color.RED);
         backToMenuButton.setFocusPainted(false);
 
         addToOrderButton.addActionListener(new ActionListener() {
