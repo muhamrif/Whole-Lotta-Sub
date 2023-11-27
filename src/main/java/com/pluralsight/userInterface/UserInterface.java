@@ -954,17 +954,6 @@ public class UserInterface {
 
     }
 
-    public void processAddSandwichToOrder(Sandwich sandwich) {
-
-    }
-
-    public void processAddDrinkToOrder(Drink drink) {
-
-    }
-
-    public void processAddChipsToOrder(Chips chips) {
-
-    }
 
     public void processRemoveSandwichFromOrder(Sandwich sandwich) {
 
