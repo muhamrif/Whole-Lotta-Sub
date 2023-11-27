@@ -86,6 +86,7 @@ public class UserInterface {
         int cheese = -1;
         int otherToppings = -1;
         int sauces = -1;
+        int sandwichSize = -1;
         boolean toasted = false;
         while (bread == -1) {
             System.out.print("Enter type of bread (1 for white and 2 for wheat 3 for rye 4 for wrap): ");
@@ -156,6 +157,18 @@ public class UserInterface {
                 toasted = false;
             } else {
                 System.out.println("Invalid input. Please enter yes or no.");
+            }
+        }
+        while (sandwichSize == -1) {
+            System.out.print("Enter your sandwich size (1 for small, 2 for medium, 3 for large): ");
+            try {
+                sandwichSize = Integer.parseInt(input.next());
+                if (sandwichSize < 1 || sandwichSize > 3) {
+                    System.out.println("Invalid input. Please enter a valid number.");
+                    sandwichSize = -1;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid integer.");
             }
         }
 
