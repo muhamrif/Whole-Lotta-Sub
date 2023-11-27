@@ -19,7 +19,7 @@ public class OrderFileManager {
         return null;
     }
 
-    public void saveOrder(Order order){
+    public static void saveOrder(Order order){
         order.setCheckoutTime(LocalDateTime.now());
         List<Sandwich> sandwiches = order.getSandwiches();
         List<Drink> drinks = order.getDrinks();

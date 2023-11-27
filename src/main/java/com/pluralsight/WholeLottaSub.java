@@ -13,7 +13,7 @@ public class WholeLottaSub {
     public static void main(String[] args) {
         System.out.println("WholeLottaSub");
 
-        //fill in the constructor with the appropriate arguments
+
         List<Sandwich> sandwiches = new ArrayList<>();
         List<Drink> drinks = new ArrayList<>();
         Drink drink = new Drink(Size.SMALL, "fanta");
