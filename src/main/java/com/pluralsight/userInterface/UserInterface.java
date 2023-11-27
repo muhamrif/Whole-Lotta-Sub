@@ -24,7 +24,7 @@ public class UserInterface {
         while (running) {
             System.out.println("Choose an option:");
             System.out.println("1 New Order");
-            System.out.println("2 Exit - exit the application");
+            System.out.println("2 Exit - exit the application");gu
 
             System.out.print("Your Selection: ");
             String input = scanner.next().trim();
