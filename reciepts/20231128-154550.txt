@@ -1,0 +1,23 @@
+                    WholeLottaSub
+                    11/28/2023
+                    123 Potato St, NY, USA
+                    123-456-7890
+Order#: 830622
+
+1 X Sandwich $10.0
+Size: MEDIUM
+Bread: Rye
+Meat: Extra Roast Beef, 
+Cheese: 
+Free Toppings: Pickles, 
+Toasted: no
+
+1 X Drink $2.0
+Size: SMALL
+Brand: Sprite
+
+1 X Chips $1.5
+Brand: plain
+
+Order Total: $13.5
+                      Thank you for your order, Hope to see you soon!

@@ -15,6 +15,7 @@ public class UserInterface {
     private List<Chips> chips = new ArrayList<>();
 
 
+
     public UserInterface() {
     }
 
@@ -48,14 +49,14 @@ public class UserInterface {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
         while (running) {
-            System.out.println(ConsoleColors.WHITE_BOLD_BRIGHT+"Choose an option:"+ConsoleColors.RESET);
+            System.out.println("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Choose an option:"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.WHITE+"1 Add Sandwich"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.WHITE+"2 Add Drink"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.WHITE+"3 Add Chips"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.WHITE+"4 Checkout"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.WHITE+"0 Cancel Order"+ConsoleColors.RESET);
 
-            System.out.print(ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+            System.out.print("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
             String input = scanner.next().trim();
 
             switch (input) {
@@ -95,7 +96,7 @@ public class UserInterface {
         boolean sizeFlag = true;
         while (sizeFlag) {
 
-            System.out.print(ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+            System.out.print(ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
             String SandwichInput = input.next().trim();
 
             switch (SandwichInput) {
@@ -124,7 +125,7 @@ public class UserInterface {
             }
         }
 
-        System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"What type of bread would you like to add to your sandwich?:"+ConsoleColors.RESET);
+        System.out.println(ConsoleColors.YELLOW_BOLD_BRIGHT+"What type of bread would you like to add to your sandwich?:"+ConsoleColors.RESET);
         System.out.println(ConsoleColors.WHITE+"1. White"+ConsoleColors.RESET);
         System.out.println(ConsoleColors.WHITE+"2. Whole Wheat"+ConsoleColors.RESET);
         System.out.println(ConsoleColors.WHITE+"3. Rye"+ConsoleColors.RESET);
