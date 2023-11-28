@@ -45,17 +45,18 @@ public class RemoveItemPage {
                     int index = itemComboBox.getSelectedIndex();
                     JOptionPane.showMessageDialog(frame, "Removed: "+ "\n" + order.get(index).toString());
                     Object removeItem = order.get(index);
-                    order.remove(index);
+                    order.remove(index-1);
                     if (removeItem instanceof Sandwich) {
-                        AddOrderGui.sandwich.remove(index);
+                        AddOrderGui.sandwich.remove(removeItem);
                     } else if (removeItem instanceof Chips) {
-                        AddOrderGui.chips.remove(index);
+                        AddOrderGui.chips.remove(removeItem);
                     } else if (removeItem instanceof Drink) {
-                        AddOrderGui.drinks.remove(index);
+                        AddOrderGui.drinks.remove(removeItem);
                     }
                     frame.setVisible(false);
                     frame.dispose();
                     AddOrderGui.run();
+
                 }
 
             }
