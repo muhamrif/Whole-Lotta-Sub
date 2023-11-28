@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import LoadingBar.ProgressBar;
 import com.pluralsight.fileManager.OrderFileManager;
 import com.pluralsight.order.*;
 import com.pluralsight.userInterface.UserInterface;
@@ -9,7 +10,10 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WholeLottaSub {
+
+
+
+    public class WholeLottaSub {
     OrderFileManager orderFileManager = new OrderFileManager();
     public static void main(String[] args) {
 //        System.out.println("WholeLottaSub");
@@ -39,7 +43,8 @@ public class WholeLottaSub {
 //
 //        OrderFileManager orderFileManager = new OrderFileManager();
 //        orderFileManager.saveOrder(order);
-
+        //ProgressBar.main();
+        ProgressBar.bar();
         UserInterface userInterface = new UserInterface();
         userInterface.HomeMenu();
 
