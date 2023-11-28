@@ -28,6 +28,7 @@ public class AddOrderGui {
         SwingUtilities.invokeLater(AddOrderGui::showOrderScreen);
     }
 
+
     private static void showOrderScreen() {
         frame = new JFrame("Add items to your order");
         frame.getContentPane().removeAll();
@@ -106,6 +107,7 @@ public class AddOrderGui {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new RemoveItemPage(frame).showRemoveItemScreen();
+//                finalOrder=updateOrder();
             }
         });
 

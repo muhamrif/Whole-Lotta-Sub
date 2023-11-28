@@ -54,7 +54,7 @@ public class AddDrinksPage {
         });
 
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(4, 2));
+        panel.setLayout(new GridLayout(3, 2));
         panel.add(sizeLabel);
         panel.add(sizeComboBox);
         panel.add(flavorLabel);

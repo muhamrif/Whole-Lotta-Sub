@@ -1,5 +1,9 @@
 package com.pluralsight.graphicalUserInterface;
 
+import com.pluralsight.order.Chips;
+import com.pluralsight.order.Drink;
+import com.pluralsight.order.Sandwich;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -40,7 +44,15 @@ public class RemoveItemPage {
                 }else {
                     int index = itemComboBox.getSelectedIndex();
                     JOptionPane.showMessageDialog(frame, "Removed: "+ "\n" + order.get(index).toString());
+                    Object removeItem = order.get(index);
                     order.remove(index);
+                    if (removeItem instanceof Sandwich) {
+                        AddOrderGui.sandwich.remove(index);
+                    } else if (removeItem instanceof Chips) {
+                        AddOrderGui.chips.remove(index);
+                    } else if (removeItem instanceof Drink) {
+                        AddOrderGui.drinks.remove(index);
+                    }
                     frame.setVisible(false);
                     frame.dispose();
                     AddOrderGui.run();
