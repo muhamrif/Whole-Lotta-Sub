@@ -1,7 +1,7 @@
 package com.pluralsight;
 
 
-import LoadingBar.ProgressBar;
+import com.pluralsight.LoadingBar.ProgressBar;
 import com.pluralsight.userInterface.UserInterface;
     public class WholeLottaSub {
 
