@@ -1,4 +1,4 @@
-package LoadingBar;
+package com.pluralsight.LoadingBar;
 
 
 import com.pluralsight.userInterface.ConsoleColors;
