@@ -61,7 +61,7 @@ public class OrderFileManager {
                 for (Chips chip : chips) {
                  writer.write(chip.toString() + "\n");
                 }
-                writer.write("Order Total: $" + order.getOrderTotalPrice()+ "\n");
+                writer.write("Order Total: $" + String.format("%.2f",order.getOrderTotalPrice())+ "\n");
 
                 writer.write("                      Thank you for your order, Hope to see you soon!");
                 writer.close();

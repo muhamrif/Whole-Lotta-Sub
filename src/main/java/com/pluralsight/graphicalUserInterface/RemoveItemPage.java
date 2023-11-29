@@ -24,11 +24,21 @@ public class RemoveItemPage {
         // Assuming you have a list of items to remove
         String[] items = new String[order.size()];
         for (int i = 0; i < order.size(); i++) {
-            items[i] = "Item #" + (i+1) ;
+            if(order.get(i) instanceof Sandwich){
+                items[i] = "Item #" + (i+1)  + ": "+((Sandwich) order.get(i)).getSize()+" "+ ((Sandwich) order.get(i)).getName();
+            }
+            else if(order.get(i) instanceof Drink){
+                items[i] = "Item #" + (i+1)  + ": "+((Drink) order.get(i)).getSize() +" "+((Drink) order.get(i)).getType();
+            }
+            else if(order.get(i) instanceof Chips){
+                items[i] = "Item #" + (i+1)  + ": "+ ((Chips) order.get(i)).getType() + " Chips";
+            }
+
         }
 
         JLabel selectItemLabel = new JLabel("Select Item to Remove:");
         JComboBox<String> itemComboBox = new JComboBox<>(items);
+
 
         JButton removeButton = new JButton("Remove");
         JButton backToMenuButton = new JButton("Back to Menu");
@@ -45,7 +55,7 @@ public class RemoveItemPage {
                     int index = itemComboBox.getSelectedIndex();
                     JOptionPane.showMessageDialog(frame, "Removed: "+ "\n" + order.get(index).toString());
                     Object removeItem = order.get(index);
-                    order.remove(index-1);
+                    order.remove(index);
                     if (removeItem instanceof Sandwich) {
                         AddOrderGui.sandwich.remove(removeItem);
                     } else if (removeItem instanceof Chips) {

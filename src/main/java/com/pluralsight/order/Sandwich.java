@@ -3,7 +3,6 @@ package com.pluralsight.order;
 import com.pluralsight.utils.IPrice;
 import com.pluralsight.utils.Size;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Sandwich implements IPrice {
@@ -12,6 +11,8 @@ public class Sandwich implements IPrice {
     private List<Topping> toppings;
     private Size size;
     private Boolean toasted;
+
+    private String name ="sandwich";
 
     public Sandwich(Bread bread, List<Topping> toppings, Size size, Boolean toasted) {
         this.bread = bread;
@@ -68,6 +69,13 @@ public class Sandwich implements IPrice {
 
     }
 
+    public void setName(String name) {
+    	this.name = name;
+    }
+    public String getName() {
+        return name;
+    }
+
     @Override
     public double getPrice(Size size) {
         double breadPrice = bread.getPrice(size);
@@ -104,12 +112,23 @@ public class Sandwich implements IPrice {
             }
         }
 
+        if (!name.equalsIgnoreCase("sandwich")) {
+            return "1 X "+ name.toUpperCase() +" $" + getPrice(size) + "\n" +
+                    "Size: " + size + "\n" +
+                    "Bread: " + bread.getType() + "\n" +
+                    "Meat: " + meat.toString() + "\n" +
+                    "Cheese: " + cheese.toString() + "\n" +
+                    "Free Toppings: " + freetoppings.toString() + "\n" +
+                    "Toasted: " + (toasted ? "yes" : "no") + "\n";
+        }
+
         return "1 X Sandwich $" + getPrice(size) + "\n" +
                 "Size: " + size + "\n" +
                 "Bread: " + bread.getType() + "\n" +
                 "Meat: " + meat.toString() + "\n" +
                 "Cheese: " + cheese.toString() + "\n" +
                 "Free Toppings: " + freetoppings.toString() + "\n" +
-                "Toasted: " + (toasted?"yes":"no") + "\n";
+                "Toasted: " + (toasted ? "yes" : "no") + "\n";
+
     }
 }
