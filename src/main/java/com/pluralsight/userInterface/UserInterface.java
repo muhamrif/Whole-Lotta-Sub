@@ -23,7 +23,7 @@ public class UserInterface {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
         while (running) {
-            System.out.println(ConsoleColors.WHITE_BOLD_BRIGHT+"Choose an option:"+ConsoleColors.RESET);
+            System.out.println("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Choose an option:"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"1 New Order"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.RED_BOLD_BRIGHT+"2 Exit - exit the application"+ConsoleColors.RESET);
 
@@ -49,12 +49,12 @@ public class UserInterface {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
         while (running) {
-            System.out.println("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Choose an option:"+ConsoleColors.RESET);
+            System.out.println("\n"+ConsoleColors.BLUE_BOLD_BRIGHT+"Choose an option:"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.WHITE+"1 Add Sandwich"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.WHITE+"2 Add Drink"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.WHITE+"3 Add Chips"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.WHITE+"4 Checkout"+ConsoleColors.RESET);
-            System.out.println(ConsoleColors.WHITE+"0 Cancel Order"+ConsoleColors.RESET);
+            System.out.println(ConsoleColors.RED+"0 Cancel Order"+ConsoleColors.RESET);
 
             System.out.print("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
             String input = scanner.next().trim();
@@ -91,12 +91,12 @@ public class UserInterface {
         System.out.println(ConsoleColors.WHITE+"1. 4 inch (small)"+ConsoleColors.RESET);
         System.out.println(ConsoleColors.WHITE+"2. 8 inch (medium)"+ConsoleColors.RESET);
         System.out.println(ConsoleColors.WHITE+"3. 12 inch (large)"+ConsoleColors.RESET);
-        System.out.println(ConsoleColors.WHITE+"4. go back to menu"+ConsoleColors.RESET);
+        System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"4. Go Back To Home Menu"+ConsoleColors.RESET);
         Size sandwichSize = Size.SMALL;
         boolean sizeFlag = true;
         while (sizeFlag) {
 
-            System.out.print(ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+            System.out.print(ConsoleColors.PURPLE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
             String SandwichInput = input.next().trim();
 
             switch (SandwichInput) {
@@ -116,26 +116,26 @@ public class UserInterface {
                     sizeFlag = false;
                     break;
                 case "4":
-                    System.out.println(ConsoleColors.WHITE+"Going back to menu"+ConsoleColors.RESET);
+                    System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"Go Back To Home Menu"+ConsoleColors.RESET);
                     sizeFlag = false;
                     break;
                 default:
-                    System.out.println(ConsoleColors.WHITE+"Invalid option, please try again."+ConsoleColors.RESET);
+                    System.out.println(ConsoleColors.RED_BOLD_BRIGHT+"Invalid option, please try again."+ConsoleColors.RESET);
                     break;
             }
         }
 
-        System.out.println(ConsoleColors.YELLOW_BOLD_BRIGHT+"What type of bread would you like to add to your sandwich?:"+ConsoleColors.RESET);
+        System.out.println("\n"+ConsoleColors.YELLOW_BOLD_BRIGHT+"What type of bread would you like to add to your sandwich?:"+ConsoleColors.RESET);
         System.out.println(ConsoleColors.WHITE+"1. White"+ConsoleColors.RESET);
         System.out.println(ConsoleColors.WHITE+"2. Whole Wheat"+ConsoleColors.RESET);
         System.out.println(ConsoleColors.WHITE+"3. Rye"+ConsoleColors.RESET);
         System.out.println(ConsoleColors.WHITE+"4. Wrap"+ConsoleColors.RESET);
-        System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"5. Go back to menu"+ConsoleColors.RESET);
+        System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"5. Go Back To Home Menu"+ConsoleColors.RESET);
         Bread sandwichBread = new Bread("no bread");
         boolean breadFlag = true;
         while (breadFlag) {
 
-            System.out.print(ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+            System.out.print("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
             String BreadInput = input.next().trim();
 
             switch (BreadInput) {
@@ -160,7 +160,7 @@ public class UserInterface {
                     breadFlag = false;
                     break;
                 case "5":
-                    System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"Going back to menu"+ConsoleColors.RESET);
+                    System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"Go Back To Home Menu"+ConsoleColors.RESET);
                     breadFlag = false;
                     break;
                 default:
@@ -169,15 +169,15 @@ public class UserInterface {
             }
         }
 
-        System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like your sandwich toasted?"+ConsoleColors.RESET);
+        System.out.println("\n"+ConsoleColors.YELLOW_BOLD_BRIGHT+"Would you like your sandwich toasted?"+ConsoleColors.RESET);
         System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"1. Yes"+ConsoleColors.RESET);
         System.out.println(ConsoleColors.RED_BOLD_BRIGHT+"2. No"+ConsoleColors.RESET);
-        System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go back to menu"+ConsoleColors.RESET);
+        System.out.println(ConsoleColors.PURPLE_BOLD_BRIGHT+"3. Go Back To Home Menu"+ConsoleColors.RESET);
         boolean toastedFlag = true;
         boolean sandwichToasted = false;
         while (toastedFlag) {
 
-            System.out.print(ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+            System.out.print("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
             String ToastedInput = input.next().trim();
 
             switch (ToastedInput) {
@@ -192,7 +192,7 @@ public class UserInterface {
                     toastedFlag = false;
                     break;
                 case "3":
-                    System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"Going back to menu"+ConsoleColors.RESET);
+                    System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"Go Back To Home Menu"+ConsoleColors.RESET);
                     toastedFlag = false;
                     break;
                 default:
@@ -203,14 +203,14 @@ public class UserInterface {
 
         ArrayList<Topping> toppings = new ArrayList<>();
 
-        System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like to add toppings to your sandwich?"+ConsoleColors.RESET);
+        System.out.println("\n"+ConsoleColors.PURPLE_BOLD_BRIGHT+"Would you like to add toppings to your sandwich?"+ConsoleColors.RESET);
         System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"1. Yes"+ConsoleColors.RESET);
         System.out.println(ConsoleColors.RED_BOLD_BRIGHT+"2. No"+ConsoleColors.RESET);
         System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go back to menu"+ConsoleColors.RESET);
         boolean toppingFlag = true;
 
         while (toppingFlag) {
-            System.out.print(ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+            System.out.print("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
             String ToppingInput = input.next().trim();
 
             switch (ToppingInput) {
@@ -224,7 +224,7 @@ public class UserInterface {
                     toppingFlag = false;
                     break;
                 case "3":
-                    System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"Going back to menu"+ConsoleColors.RESET);
+                    System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"Go Back To Home Menu"+ConsoleColors.RESET);
                     toppingFlag = false;
                     break;
                 default:
@@ -247,39 +247,39 @@ public class UserInterface {
         boolean toppingFlag = true;
 
         while (toppingFlag) {
-            System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"What Toppings would you like to add to your sandwich?:"+ConsoleColors.RESET);
+            System.out.println("\n"+ConsoleColors.YELLOW_BOLD_BRIGHT+"What Toppings would you like to add to your sandwich?:"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.WHITE+"1. Meats"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.WHITE+"2. Cheeses"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.WHITE+"3. Sauces"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.WHITE+"4. Veggies"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.WHITE+"5. No more toppings to add"+ConsoleColors.RESET);
-            System.out.print(ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+            System.out.print("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
             String ToppingInput = input.next().trim();
 
             switch (ToppingInput) {
                 case "1":
-                    System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"Adding Meats to sandwich"+ConsoleColors.RESET);
+                    System.out.println(ConsoleColors.WHITE_BOLD_BRIGHT+"Adding Meats to sandwich"+ConsoleColors.RESET);
                     System.out.println(ConsoleColors.WHITE+"1. Ham"+ConsoleColors.RESET);
                     System.out.println(ConsoleColors.WHITE+"2. Turkey"+ConsoleColors.RESET);
                     System.out.println(ConsoleColors.WHITE+"3. Roast Beef"+ConsoleColors.RESET);
                     System.out.println(ConsoleColors.WHITE+"4. Chicken"+ConsoleColors.RESET);
                     System.out.println(ConsoleColors.WHITE+"5. Salami"+ConsoleColors.RESET);
                     System.out.println(ConsoleColors.WHITE+"6. bacon"+ConsoleColors.RESET);
-                    System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"7. Go back to menu"+ConsoleColors.RESET);
+                    System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"7. Go Back To Home Menu"+ConsoleColors.RESET);
                     boolean meatFlag = true;
                     while (meatFlag) {
-                        System.out.print(ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                        System.out.print("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
                         String MeatInput = input.next().trim();
 
                         switch (MeatInput) {
                             case "1":
-                                System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like to add extra Ham to your sandwich?"+ConsoleColors.RESET);
+                                System.out.println("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like to add extra Ham to your sandwich?"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.GREEN+"1. Yes"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.RED+"2. No"+ConsoleColors.RESET);
-                                System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go back to menu"+ConsoleColors.RESET);
+                                System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go Back To Home Menu"+ConsoleColors.RESET);
                                 boolean extraMeatFlag = true;
                                 while (extraMeatFlag) {
-                                    System.out.print(ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                                    System.out.print("\n"+ConsoleColors.YELLOW_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
                                     String ExtraMeatInput = input.next().trim();
 
                                     switch (ExtraMeatInput) {
@@ -296,7 +296,7 @@ public class UserInterface {
                                             extraMeatFlag = false;
                                             break;
                                         case "3":
-                                            System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"Going back to menu"+ConsoleColors.RESET);
+                                            System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"Go Back To Home Menu"+ConsoleColors.RESET);
                                             extraMeatFlag = false;
                                             break;
                                         default:
@@ -307,13 +307,13 @@ public class UserInterface {
                                 meatFlag = false;
                                 break;
                             case "2":
-                                System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like to add extra Turkey to your sandwich?"+ConsoleColors.RESET);
+                                System.out.println("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like to add extra Turkey to your sandwich?"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.GREEN+"1. Yes"+ConsoleColors.RESET);
-                                System.out.println(ConsoleColors.GREEN+"2. No"+ConsoleColors.RESET);
-                                System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go back to menu"+ConsoleColors.RESET);
+                                System.out.println(ConsoleColors.RED+"2. No"+ConsoleColors.RESET);
+                                System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go Back To Home Menu"+ConsoleColors.RESET);
                                 boolean extraTurkeyFlag = true;
                                 while (extraTurkeyFlag) {
-                                    System.out.print(ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                                    System.out.print("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
                                     String ExtraTurkeyInput = input.next().trim();
 
                                     switch (ExtraTurkeyInput) {
@@ -330,7 +330,7 @@ public class UserInterface {
                                             extraTurkeyFlag = false;
                                             break;
                                         case "3":
-                                            System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"Going back to menu"+ConsoleColors.RESET);
+                                            System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"Go Back To Home Menu"+ConsoleColors.RESET);
                                             extraTurkeyFlag = false;
                                             break;
                                         default:
@@ -341,13 +341,13 @@ public class UserInterface {
                                 meatFlag = false;
                                 break;
                             case "3":
-                                System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like to add extra Roast Beef to your sandwich?"+ConsoleColors.RESET);
+                                System.out.println("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like to add extra Roast Beef to your sandwich?"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.GREEN+"1. Yes"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.RED+"2. No"+ConsoleColors.RESET);
-                                System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go back to menu"+ConsoleColors.RESET);
+                                System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go Back To Home Menu"+ConsoleColors.RESET);
                                 boolean extraRoastBeefFlag = true;
                                 while (extraRoastBeefFlag) {
-                                    System.out.print(ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                                    System.out.print("\n"+ConsoleColors.YELLOW_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
                                     String ExtraRoastBeefInput = input.next().trim();
 
                                     switch (ExtraRoastBeefInput) {
@@ -364,7 +364,7 @@ public class UserInterface {
                                             extraRoastBeefFlag = false;
                                             break;
                                         case "3":
-                                            System.out.println(ConsoleColors.BLUE+"Going back to menu"+ConsoleColors.RESET);
+                                            System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"Go Back To Home Menu"+ConsoleColors.RESET);
                                             extraRoastBeefFlag = false;
                                             break;
                                         default:
@@ -375,13 +375,13 @@ public class UserInterface {
                                 meatFlag = false;
                                 break;
                             case "4":
-                                System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like to add extra Chicken to your sandwich?"+ConsoleColors.RESET);
+                                System.out.println("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like to add extra Chicken to your sandwich?"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.GREEN+"1. Yes"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.RED+"2. No"+ConsoleColors.RESET);
-                                System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go back to menu"+ConsoleColors.RESET);
+                                System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go Back To Home Menu"+ConsoleColors.RESET);
                                 boolean extraChickenFlag = true;
                                 while (extraChickenFlag) {
-                                    System.out.print(ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                                    System.out.print("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
                                     String ExtraChickenInput = input.next().trim();
 
                                     switch (ExtraChickenInput) {
@@ -398,7 +398,7 @@ public class UserInterface {
                                             extraChickenFlag = false;
                                             break;
                                         case "3":
-                                            System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"Going back to menu"+ConsoleColors.RESET);
+                                            System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"Go Back To Home Menu"+ConsoleColors.RESET);
                                             extraChickenFlag = false;
                                             break;
                                         default:
@@ -409,13 +409,13 @@ public class UserInterface {
                                 meatFlag = false;
                                 break;
                             case "5":
-                                System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like to add extra Salami to your sandwich?"+ConsoleColors.RESET);
+                                System.out.println("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like to add extra Salami to your sandwich?"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.GREEN+"1. Yes"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.RED+"2. No"+ConsoleColors.RESET);
-                                System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go back to menu"+ConsoleColors.RESET);
+                                System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go Back To Home Menu"+ConsoleColors.RESET);
                                 boolean extraSalamiFlag = true;
                                 while (extraSalamiFlag) {
-                                    System.out.print(ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                                    System.out.print("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
                                     String ExtraSalamiInput = input.next().trim();
 
                                     switch (ExtraSalamiInput) {
@@ -432,7 +432,7 @@ public class UserInterface {
                                             extraSalamiFlag = false;
                                             break;
                                         case "3":
-                                            System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"Going back to menu"+ConsoleColors.RESET);
+                                            System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"Go Back To Home Menu"+ConsoleColors.RESET);
                                             extraSalamiFlag = false;
                                             break;
                                         default:
@@ -443,13 +443,13 @@ public class UserInterface {
                                 meatFlag = false;
                                 break;
                             case "6":
-                                System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like to add extra Bacon to your sandwich?"+ConsoleColors.RESET);
+                                System.out.println("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like to add extra Bacon to your sandwich?"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.GREEN+"1. Yes"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.RED+"2. No"+ConsoleColors.RESET);
-                                System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go back to menu"+ConsoleColors.RESET);
+                                System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go Back To Home Menu"+ConsoleColors.RESET);
                                 boolean extraBaconFlag = true;
                                 while (extraBaconFlag) {
-                                    System.out.print(ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                                    System.out.print("\n"+ConsoleColors.CYAN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
                                     String ExtraBaconInput = input.next().trim();
 
                                     switch (ExtraBaconInput) {
@@ -477,7 +477,7 @@ public class UserInterface {
                                 meatFlag = false;
                                 break;
                             case "7":
-                                System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"Going back to menu"+ConsoleColors.RESET);
+                                System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT+"Going back to menu"+ConsoleColors.RESET);
                                 meatFlag = false;
                                 break;
                             default:
@@ -496,18 +496,18 @@ public class UserInterface {
                     System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"5. Go back to menu"+ConsoleColors.RESET);
                     boolean cheeseFlag = true;
                     while (cheeseFlag) {
-                        System.out.print(ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                        System.out.print(ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
                         String CheeseInput = input.next().trim();
 
                         switch (CheeseInput) {
                             case "1":
-                                System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like to add extra American Cheese to your sandwich?"+ConsoleColors.RESET);
+                                System.out.println("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like to add extra American Cheese to your sandwich?"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.GREEN+"1. Yes"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.RED+"2. No"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go back to menu"+ConsoleColors.RESET);
                                 boolean extraAmericanCheese = true;
                                 while (extraAmericanCheese) {
-                                    System.out.print(ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                                    System.out.print("\n"+ConsoleColors.PURPLE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
                                     String extraAmericanCheeseInput = input.next().trim();
 
                                     switch (extraAmericanCheeseInput) {
@@ -535,13 +535,13 @@ public class UserInterface {
                                 cheeseFlag = false;
                                 break;
                             case "2":
-                                System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like to add extra Swiss Cheese to your sandwich?"+ConsoleColors.RESET);
+                                System.out.println("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like to add extra Swiss Cheese to your sandwich?"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.GREEN+"1. Yes"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.GREEN+"2. No"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go back to menu"+ConsoleColors.RESET);
                                 boolean extraSwissCheese = true;
                                 while (extraSwissCheese) {
-                                    System.out.print(ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                                    System.out.print("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
                                     String extraSwissCheeseInput = input.next().trim();
 
                                     switch (extraSwissCheeseInput) {
@@ -554,7 +554,7 @@ public class UserInterface {
                                         case "2":
                                             Topping swissCheese1 = new Cheese("Swiss Cheese", false);
                                             toppings.add(swissCheese1);
-                                            System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"Swiss Cheese added to sandwich"+ConsoleColors.RESET);
+                                            System.out.println(ConsoleColors.WHITE+"Swiss Cheese added to sandwich"+ConsoleColors.RESET);
                                             extraSwissCheese = false;
                                             break;
                                         case "3":
@@ -569,13 +569,13 @@ public class UserInterface {
                                 cheeseFlag = false;
                                 break;
                             case "3":
-                                System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like to add extra Cheddar Cheese to your sandwich?"+ConsoleColors.RESET);
+                                System.out.println("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like to add extra Cheddar Cheese to your sandwich?"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.GREEN+"1. Yes"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.RED+"2. No"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go back to menu"+ConsoleColors.RESET);
                                 boolean extraCheddarCheese = true;
                                 while (extraCheddarCheese) {
-                                    System.out.print(ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                                    System.out.print("\n"+ConsoleColors.PURPLE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
                                     String extraCheddarCheeseInput = input.next().trim();
 
                                     switch (extraCheddarCheeseInput) {
@@ -603,13 +603,13 @@ public class UserInterface {
                                 cheeseFlag = false;
                                 break;
                             case "4":
-                                System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like to add extra Provolone Cheese to your sandwich?"+ConsoleColors.RESET);
+                                System.out.println("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Would you like to add extra Provolone Cheese to your sandwich?"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.GREEN+"1. Yes"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.RED+"2. No"+ConsoleColors.RESET);
                                 System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go back to menu"+ConsoleColors.RESET);
                                 boolean extraProvoloneCheese = true;
                                 while (extraProvoloneCheese) {
-                                    System.out.print(ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                                    System.out.print("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
                                     String extraProvoloneCheeseInput = input.next().trim();
 
                                     switch (extraProvoloneCheeseInput) {
@@ -658,7 +658,7 @@ public class UserInterface {
                     System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"7. Go back to menu"+ConsoleColors.RESET);
                     boolean sauceFlag = true;
                     while (sauceFlag) {
-                        System.out.print(ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                        System.out.print("\n"+ConsoleColors.PURPLE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
                         String SauceInput = input.next().trim();
 
                         switch (SauceInput) {
@@ -724,7 +724,7 @@ public class UserInterface {
                     System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"X. Go back to menu"+ConsoleColors.RESET);
                     boolean veggieFlag = true;
                     while (veggieFlag) {
-                        System.out.print(ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                        System.out.print("\n"+ConsoleColors.CYAN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
                         String VeggieInput = input.next().trim();
 
                         switch (VeggieInput.toLowerCase()) {
@@ -819,7 +819,7 @@ public class UserInterface {
         Size drinkSize = Size.SMALL;
         boolean sizeFlag = true;
         while (sizeFlag) {
-            System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+            System.out.println("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
             String DrinkInput = scanner.next().trim();
 
             switch (DrinkInput) {
@@ -853,10 +853,10 @@ public class UserInterface {
             System.out.println(ConsoleColors.WHITE+"2. Mountain Dew"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.WHITE+"3. Sprite"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.WHITE+"4. Pepsi"+ConsoleColors.RESET);
-            System.out.println("5. Go back to home menu");
+            System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"5. Go back to home menu"+ConsoleColors.RESET);
             boolean brandFlag = true;
             while (brandFlag) {
-                System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"Your Brand Selection: "+ConsoleColors.RESET);
+                System.out.println("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Brand Selection: "+ConsoleColors.RESET);
                 String BrandInput = scanner.next().trim();
 
                 switch (BrandInput) {
@@ -885,7 +885,7 @@ public class UserInterface {
                         brandFlag = false;
                         break;
                     case "5":
-                        System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"Go back to home menu"+ConsoleColors.RESET);
+                        System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"Go back to home menu"+ConsoleColors.RESET);
                         brandFlag = false;
                         break;
                     default:
@@ -903,7 +903,7 @@ public class UserInterface {
 
     public void addChipsMenu() {
         Scanner input = new Scanner(System.in);
-        System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"What Flavor of Chips would you Like to Add to your order?:"+ConsoleColors.RESET);
+        System.out.println("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"What Flavor of Chips would you Like to Add to your order?:"+ConsoleColors.RESET);
         System.out.println(ConsoleColors.WHITE+"1. plain"+ConsoleColors.RESET);
         System.out.println(ConsoleColors.WHITE+"2. BBQ"+ConsoleColors.RESET);
         System.out.println(ConsoleColors.WHITE+"3. salt and vinegar"+ConsoleColors.RESET);
@@ -913,7 +913,7 @@ public class UserInterface {
 
         while (flag) {
 
-            System.out.print(ConsoleColors.BLUE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+            System.out.print("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
             String ChipsInput = input.next().trim();
 
             switch (ChipsInput) {
