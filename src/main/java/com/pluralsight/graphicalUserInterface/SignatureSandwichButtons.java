@@ -18,7 +18,7 @@ public class SignatureSandwichButtons {
 
     public void SignatureSandwich() {
         frame.getContentPane().removeAll();
-    frame.setSize(800, 600);
+    frame.setSize(800, 800);
             JLabel helloLabel = new JLabel("Please Select a Signature Sandwich or Build Your Own");
         helloLabel.setHorizontalAlignment(JLabel.CENTER);
                 helloLabel.setFont(new Font("Arial", Font.BOLD, 20));
@@ -35,6 +35,9 @@ public class SignatureSandwichButtons {
 
                 newOrderButton2.setBackground(Color.GREEN);
                 newOrderButton2.setFocusPainted(true);
+
+                JButton newOrderButton4 = new JButton();
+                newOrderButton4.setText("<html><div style='text-align: center;'><b>Ray's Potato Percussion Panini:</b> <br/>Extra Potato,<br/>with Potato Cheese,<br/>Topped with Potato,<br/>on a Toasted Potato Bread.</div></html>");
 
                 JButton newOrderButton3 = new JButton("Add Custom Sandwich");
                 newOrderButton3.setBackground(Color.GREEN);
@@ -58,12 +61,20 @@ public class SignatureSandwichButtons {
                     }
                 });
 
+        newOrderButton4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new AddCustomSandwichThreePage(frame).showAddCustomSandwichThreeScreen();
+            }
+        });
+
                 newOrderButton3.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         new AddSandwichPage(frame).showAddSandwichScreen();
                     }
                 });
+
 
 
         backToMenuButton.addActionListener(new ActionListener() {
@@ -76,10 +87,11 @@ public class SignatureSandwichButtons {
         });
 
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(4, 1));
+        panel.setLayout(new GridLayout(5, 1));
 
         panel.add(newOrderButton);
         panel.add(newOrderButton2);
+        panel.add(newOrderButton4);
         panel.add(newOrderButton3);
         panel.add(backToMenuButton);
 

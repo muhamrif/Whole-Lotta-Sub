@@ -1,24 +1,24 @@
 package com.pluralsight.graphicalUserInterface;
 
-import com.pluralsight.order.*;
-import com.pluralsight.utils.Size;
+        import com.pluralsight.order.*;
+        import com.pluralsight.utils.Size;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
+        import javax.swing.*;
+        import java.awt.*;
+        import java.awt.event.ActionEvent;
+        import java.awt.event.ActionListener;
+        import java.util.ArrayList;
 
-public class AddCustomSandwichOnePage {
+public class AddCustomSandwichThreePage {
     private JFrame frame;
 
-    public AddCustomSandwichOnePage(JFrame mainFrame) {
+    public AddCustomSandwichThreePage(JFrame mainFrame) {
         this.frame = mainFrame;
     }
 
-    public void showAddCustomSandwichOneScreen() {
+    public void showAddCustomSandwichThreeScreen() {
         frame.getContentPane().removeAll();
-        frame.setSize(935,500);
+        frame.setSize(1087,490);
 
         // Sandwich size options
 
@@ -30,19 +30,28 @@ public class AddCustomSandwichOnePage {
 
 
         // Bread options
-        String[] breadOptions = {"White", "Whole Wheat", "Rye", "Wrap"};
+        String[] breadOptions = {"Potato Bread"};
         JLabel selectBreadLabel = new JLabel("Select Bread:");
         JComboBox<String> breadComboBox = new JComboBox<>(breadOptions);
         breadComboBox.setSelectedIndex(0);
+        breadComboBox.setEnabled(false);
 
         // Meat checkboxes
         JLabel selectMeatLabel = new JLabel("Select Meat:");
-        JCheckBox steakCheckBox = new JCheckBox("Steak",true);
+        JCheckBox steakCheckBox = new JCheckBox("Steak");
         JCheckBox hamCheckBox = new JCheckBox("Ham");
         JCheckBox salamiCheckBox = new JCheckBox("Salami");
         JCheckBox roastBeefCheckBox = new JCheckBox("Roast Beef");
         JCheckBox chickenCheckBox = new JCheckBox("Chicken");
-        JCheckBox baconCheckBox = new JCheckBox("Bacon",true);
+        JCheckBox baconCheckBox = new JCheckBox("Bacon");
+        JCheckBox PotatoCheckBox = new JCheckBox("Potato",true);
+        steakCheckBox.setEnabled(false);
+        hamCheckBox.setEnabled(false);
+        salamiCheckBox.setEnabled(false);
+        roastBeefCheckBox.setEnabled(false);
+        chickenCheckBox.setEnabled(false);
+        PotatoCheckBox.setEnabled(false);
+        baconCheckBox.setEnabled(false);
 
 
 
@@ -53,29 +62,47 @@ public class AddCustomSandwichOnePage {
         meatCheckBoxes.add(roastBeefCheckBox);
         meatCheckBoxes.add(chickenCheckBox);
         meatCheckBoxes.add(baconCheckBox);
+        meatCheckBoxes.add(PotatoCheckBox);
 
 
         // Cheese checkboxes
         JLabel selectCheeseLabel = new JLabel("Select Cheese:");
         JCheckBox swissCheckBox = new JCheckBox("Swiss");
         JCheckBox cheddarCheckBox = new JCheckBox("Cheddar");
-        JCheckBox provoloneCheckBox = new JCheckBox("Provolone",true);
+        JCheckBox provoloneCheckBox = new JCheckBox("Provolone");
         JCheckBox americanCheckBox = new JCheckBox("American");
+        JCheckBox PotatoCheeseCheckBox = new JCheckBox("Potato",true);
+        swissCheckBox.setEnabled(false);
+        cheddarCheckBox.setEnabled(false);
+        provoloneCheckBox.setEnabled(false);
+        americanCheckBox.setEnabled(false);
+        PotatoCheeseCheckBox.setEnabled(false);
+
 
         ArrayList<JCheckBox> cheeseCheckBoxes = new ArrayList<>();
         cheeseCheckBoxes.add(swissCheckBox);
         cheeseCheckBoxes.add(cheddarCheckBox);
         cheeseCheckBoxes.add(provoloneCheckBox);
         cheeseCheckBoxes.add(americanCheckBox);
+        cheeseCheckBoxes.add(PotatoCheckBox);
+        cheeseCheckBoxes.add(PotatoCheeseCheckBox);
 
         // Sauce checkboxes
         JLabel selectSauceLabel = new JLabel("Select Sauce:");
-        JCheckBox mayonnaiseCheckBox = new JCheckBox("Mayonnaise",true);
+        JCheckBox mayonnaiseCheckBox = new JCheckBox("Mayonnaise");
         JCheckBox mustardCheckBox = new JCheckBox("Mustard");
         JCheckBox ketchupCheckBox = new JCheckBox("Ketchup");
         JCheckBox ranchCheckBox = new JCheckBox("Ranch");
         JCheckBox thousandIslandCheckBox = new JCheckBox("Thousand Island");
         JCheckBox vinaigretteCheckBox = new JCheckBox("Vinaigrette");
+        JCheckBox PotatoSauceCheckBox = new JCheckBox("Potato",true);
+        mayonnaiseCheckBox.setEnabled(false);
+        mustardCheckBox.setEnabled(false);
+        ketchupCheckBox.setEnabled(false);
+        ranchCheckBox.setEnabled(false);
+        thousandIslandCheckBox.setEnabled(false);
+        vinaigretteCheckBox.setEnabled(false);
+        PotatoSauceCheckBox.setEnabled(false);
 
         ArrayList<JCheckBox> sauceCheckBoxes = new ArrayList<>();
         sauceCheckBoxes.add(mayonnaiseCheckBox);
@@ -84,11 +111,12 @@ public class AddCustomSandwichOnePage {
         sauceCheckBoxes.add(ranchCheckBox);
         sauceCheckBoxes.add(thousandIslandCheckBox);
         sauceCheckBoxes.add(vinaigretteCheckBox);
+        sauceCheckBoxes.add(PotatoSauceCheckBox);
 
         // Regular topping checkboxes
         JLabel selectToppingLabel = new JLabel("Select Regular Toppings:");
-        JCheckBox lettuceCheckBox = new JCheckBox("Lettuce",true);
-        JCheckBox tomatoCheckBox = new JCheckBox("Tomato", true);
+        JCheckBox lettuceCheckBox = new JCheckBox("Lettuce");
+        JCheckBox tomatoCheckBox = new JCheckBox("Tomato");
         JCheckBox onionCheckBox = new JCheckBox("Onion");
         JCheckBox picklesCheckBox = new JCheckBox("Pickles");
         JCheckBox jalapenosCheckBox = new JCheckBox("Jalapenos");
@@ -98,6 +126,20 @@ public class AddCustomSandwichOnePage {
         JCheckBox mushroomsCheckBox = new JCheckBox("Mushrooms");
         JCheckBox spinachCheckBox = new JCheckBox("Spinach");
         JCheckBox guacamoleCheckBox = new JCheckBox("Guacamole");
+        JCheckBox PotatoRegularCheckBox = new JCheckBox("Potato",true);
+        lettuceCheckBox.setEnabled(false);
+        tomatoCheckBox.setEnabled(false);
+        onionCheckBox.setEnabled(false);
+        picklesCheckBox.setEnabled(false);
+        jalapenosCheckBox.setEnabled(false);
+        bananaPeppersCheckBox.setEnabled(false);
+        olivesCheckBox.setEnabled(false);
+        cucumbersCheckBox.setEnabled(false);
+        mushroomsCheckBox.setEnabled(false);
+        spinachCheckBox.setEnabled(false);
+        guacamoleCheckBox.setEnabled(false);
+        PotatoRegularCheckBox.setEnabled(false);
+
 
         ArrayList<JCheckBox> toppingCheckBoxes = new ArrayList<>();
         toppingCheckBoxes.add(lettuceCheckBox);
@@ -111,10 +153,13 @@ public class AddCustomSandwichOnePage {
         toppingCheckBoxes.add(mushroomsCheckBox);
         toppingCheckBoxes.add(spinachCheckBox);
         toppingCheckBoxes.add(guacamoleCheckBox);
+        toppingCheckBoxes.add(PotatoRegularCheckBox);
 
         // Checkboxes for extra meat and extra cheese
         JCheckBox extraMeatCheckBox = new JCheckBox("Extra Meat",true);
-        JCheckBox extraCheeseCheckBox = new JCheckBox("Extra Cheese",true);
+        JCheckBox extraCheeseCheckBox = new JCheckBox("Extra Cheese");
+        extraMeatCheckBox.setEnabled(false);
+        extraCheeseCheckBox.setEnabled(false);
 
         JLabel toastedLabel = new JLabel("Do You Want Your Sandwich Toasted:");
         JCheckBox toasted = new JCheckBox("Toasted",true);
@@ -169,7 +214,7 @@ public class AddCustomSandwichOnePage {
                 AddOrderGui.sandwich.add(sandwich);
                 AddOrderGui.order.add(sandwich);
                 sandwich.setName("Big Hamza");
-                JOptionPane.showMessageDialog(frame, "Added Big Hamza to the order:\n" + sandwich);
+                JOptionPane.showMessageDialog(frame, "Added Ray's Potato Percussion Panini to the order:\n" + sandwich);
                 frame.setVisible(false);
                 frame.dispose();
                 AddOrderGui.run();
@@ -214,6 +259,7 @@ public class AddCustomSandwichOnePage {
         meatPanel.setLayout(new GridLayout(2, 1));
         meatPanel.add(selectMeatLabel);
         meatPanel.add(extraMeatCheckBox);
+        meatPanel.add(PotatoCheckBox);
         meatPanel.add(steakCheckBox);
         meatPanel.add(hamCheckBox);
         meatPanel.add(salamiCheckBox);
@@ -227,6 +273,7 @@ public class AddCustomSandwichOnePage {
         JPanel cheesePanel = new JPanel();
         cheesePanel.setLayout(new GridLayout(2, 1));
         cheesePanel.add(selectCheeseLabel);
+        cheesePanel.add(PotatoCheeseCheckBox);
         cheesePanel.add(extraCheeseCheckBox);
         cheesePanel.add(swissCheckBox);
         cheesePanel.add(cheddarCheckBox);
@@ -239,6 +286,7 @@ public class AddCustomSandwichOnePage {
         JPanel saucePanel = new JPanel();
         saucePanel.setLayout(new GridLayout(2, 1));
         saucePanel.add(selectSauceLabel);
+        saucePanel.add(PotatoSauceCheckBox);
         saucePanel.add(mayonnaiseCheckBox);
         saucePanel.add(mustardCheckBox);
         saucePanel.add(ketchupCheckBox);
@@ -255,6 +303,7 @@ public class AddCustomSandwichOnePage {
         toppingPanel.add(lettuceCheckBox);
         toppingPanel.add(tomatoCheckBox);
         toppingPanel.add(onionCheckBox);
+        toppingPanel.add(PotatoRegularCheckBox);
         toppingPanel.add(picklesCheckBox);
         toppingPanel.add(jalapenosCheckBox);
         toppingPanel.add(bananaPeppersCheckBox);
@@ -291,3 +340,4 @@ public class AddCustomSandwichOnePage {
         frame.repaint();
     }
 }
+

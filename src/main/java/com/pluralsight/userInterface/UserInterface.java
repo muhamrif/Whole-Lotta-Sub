@@ -5,14 +5,18 @@ import com.pluralsight.graphicalUserInterface.AddDrinksPage;
 import com.pluralsight.order.*;
 import com.pluralsight.utils.Size;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class UserInterface {
     private List<Sandwich> sandwiches = new ArrayList<>();
     private List<Drink> drinks = new ArrayList<>();
     private List<Chips> chips = new ArrayList<>();
+
+    private List<Object> orderItems = new ArrayList<>();
 
 
 
@@ -62,12 +66,15 @@ public class UserInterface {
             switch (input) {
                 case "1":
                     addSandwichMenu();
+                    printOrder();
                     break;
                 case "2":
                     addDrinkMenu();
+                    printOrder();
                     break;
                 case "3":
                     addChipsMenu();
+                    printOrder();
                     break;
                 case "4":
                     processCheckout();
@@ -235,6 +242,7 @@ public class UserInterface {
 
         Sandwich sandwich = new Sandwich(sandwichBread, toppings, sandwichSize, sandwichToasted);
         sandwiches.add(sandwich);
+        orderItems.add(sandwich);
 
         System.out.println(ConsoleColors.WHITE_BOLD_BRIGHT+"Sandwich added to order!"+ConsoleColors.RESET);
     }
@@ -485,7 +493,6 @@ public class UserInterface {
                                 break;
                         }
                     }
-//                    toppingFlag = false;
                     break;
                 case "2":
                     System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"Adding Cheeses to sandwich"+ConsoleColors.RESET);
@@ -645,7 +652,6 @@ public class UserInterface {
                                 break;
                         }
                     }
-//                    toppingFlag = false;
                     break;
                 case "3":
                     System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"Adding Sauces to sandwich"+ConsoleColors.RESET);
@@ -708,7 +714,6 @@ public class UserInterface {
                                 break;
                         }
                     }
-//                    toppingFlag = false;
                     break;
                 case "4":
                     System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"Adding Veggies to sandwich"+ConsoleColors.RESET);
@@ -791,7 +796,6 @@ public class UserInterface {
                                 break;
                         }
                     }
-//                    toppingFlag = false;
                     break;
                 case "5":
                     System.out.println(ConsoleColors.WHITE+"All of the toppings have been added to your sandwich"+ConsoleColors.RESET);
@@ -863,24 +867,28 @@ public class UserInterface {
                     case "1":
                         Drink CocaCola = new Drink(drinkSize, "Coca-cola");
                         drinks.add(CocaCola);
+                        orderItems.add(CocaCola);
                         System.out.println(ConsoleColors.WHITE+"Coca-cola was added to your order"+ConsoleColors.RESET);
                         brandFlag = false;
                         break;
                     case "2":
                         Drink MountainDew = new Drink(drinkSize, "Mountain Dew");
                         drinks.add(MountainDew);
+                        orderItems.add(MountainDew);
                         System.out.println(ConsoleColors.WHITE+"Mountain Dew was added to your order"+ConsoleColors.RESET);
                         brandFlag = false;
                         break;
                     case "3":
                         Drink Sprite = new Drink(drinkSize, "Sprite");
                         drinks.add(Sprite);
+                        orderItems.add(Sprite);
                         System.out.println(ConsoleColors.WHITE+"Sprite was added to your order"+ConsoleColors.RESET);
                         brandFlag = false;
                         break;
                     case "4":
                         Drink pepsi = new Drink(drinkSize, "Pepsi");
                         drinks.add(pepsi);
+                        orderItems.add(pepsi);
                         System.out.println(ConsoleColors.WHITE+"Sparkling Dew was added to your order"+ConsoleColors.RESET);
                         brandFlag = false;
                         break;
@@ -920,24 +928,28 @@ public class UserInterface {
                 case "1":
                     Chips plain = new Chips("plain");
                     chips.add(plain);
+                    orderItems.add(plain);
                     System.out.println(ConsoleColors.WHITE+"Plain Chips added to order!"+ConsoleColors.RESET);
                     flag = false;
                     break;
                 case "2":
                     Chips bbqChips = new Chips("BBQ");
                     chips.add(bbqChips);
+                    orderItems.add(bbqChips);
                     System.out.println(ConsoleColors.WHITE+"BBQ Chips added to order!"+ConsoleColors.RESET);
                     flag = false;
                     break;
                 case "3":
                     Chips saltAndVinegar = new Chips("salt and vinegar");
                     chips.add(saltAndVinegar);
+                    orderItems.add(saltAndVinegar);
                     System.out.println(ConsoleColors.WHITE+"salt and vinegar Chips added to order!"+ConsoleColors.RESET);
                     flag = false;
                     break;
                 case "4":
                     Chips salt = new Chips("salt");
                     chips.add(salt);
+                    orderItems.add(salt);
                     System.out.println(ConsoleColors.WHITE+"Salt Chips added to order!"+ConsoleColors.RESET);
                     flag = false;
                     break;
@@ -972,19 +984,52 @@ public class UserInterface {
         Order order = new Order(sandwiches, drinks, chips);
         OrderFileManager orderFileManager1 = new OrderFileManager();
         orderFileManager1.saveOrder(order);
-        System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"Your order is: "+ConsoleColors.RESET);
-//        System.out.println(order.toString());
-        for (Sandwich sandwich : sandwiches) {
-            System.out.println(sandwich.toString() + "\n");
+        double total = 0;
+        int itemNumber = 1;
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println("                                  WholeLottaSub\n" +
+                "                                 " + LocalDate.now().getMonthValue() + "/" + LocalDate.now().getDayOfMonth() + "/" + LocalDate.now().getYear() + "\n" +
+                "                                 " + "123 Potato St, NY, USA" + "\n" +
+                "                                 " + "123-456-7890" + "\n" + "\n");
+
+        System.out.println("Order #" + order.getOrderNumber() + "\n");
+        for (Object item : orderItems) {
+            System.out.println("Item #" + itemNumber +":"+"\n");
+            System.out.println(item.toString() + "\n");
+            if(item instanceof Sandwich) {
+                total += ((Sandwich) item).getPrice(((Sandwich) item).getSize());
+            } else if (item instanceof Chips) {
+                total += ((Chips) item).getPrice(Size.SMALL);
+            } else if (item instanceof Drink) {
+                total += ((Drink) item).getPrice(((Drink) item).getSize());
+            }
+            itemNumber++;
         }
-        for (Drink drink : drinks) {
-            System.out.println(drink.toString() + "\n");
-        }
-        for (Chips chip : chips) {
-            System.out.println(chip.toString() + "\n");
-        }
-        System.out.println("Order Total: $"+order.getPrice(Size.SMALL));
+        System.out.println( "Order Total: $" + String.format("%.2f",total));
+        System.out.println("                                  Thankyou For Your Order");
+        System.out.println("                                    "+"Hope You Enjoy!");
+        System.out.println("------------------------------------------------------------------------");
     }
 
-
+public void printOrder(){
+    double total = 0;
+    int itemNumber = 1;
+    System.out.println("Your Current Order:");
+    if (orderItems.size() == 0) {
+        System.out.println("No items in order");
+    }
+    for (Object item : orderItems) {
+        System.out.println("Item #" + itemNumber +":");
+        System.out.println(item.toString() + "\n");
+        if(item instanceof Sandwich) {
+            total += ((Sandwich) item).getPrice(((Sandwich) item).getSize());
+        } else if (item instanceof Chips) {
+            total += ((Chips) item).getPrice(Size.SMALL);
+        } else if (item instanceof Drink) {
+            total += ((Drink) item).getPrice(((Drink) item).getSize());
+        }
+        itemNumber++;
+    }
+    System.out.println( "Order Total: $" + String.format("%.2f",total));
+}
 }
