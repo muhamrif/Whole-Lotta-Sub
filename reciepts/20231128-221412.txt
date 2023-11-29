@@ -1,0 +1,23 @@
+                    WholeLottaSub
+                    11/28/2023
+                    123 Potato St, NY, USA
+                    123-456-7890
+Order#: 264296
+
+1 X Sandwich $9.1
+Size: MEDIUM
+Bread: Rye
+Meat: 
+Cheese: Extra American Cheese, 
+Free Toppings: 
+Toasted: yes
+
+1 X Drink $3.0
+Size: LARGE
+Brand: Mountain Dew
+
+1 X Chips $1.5
+Brand: BBQ
+
+Order Total: $13.6
+                      Thank you for your order, Hope to see you soon!

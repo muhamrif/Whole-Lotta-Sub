@@ -19,7 +19,7 @@ public class AddChipsPage {
     public void showAddChipsScreen() {
         frame.getContentPane().removeAll();
 
-        JLabel flavorLabel = new JLabel("Select Drink Flavor:");
+        JLabel flavorLabel = new JLabel("Select Chips Flavor:");
         JComboBox<String> flavorComboBox = new JComboBox<>(new String[]{"Plain", "BBQ", "Salt & Vinegar", "Sour Cream & Onion", "Jalapeno", "Cheddar & Sour Cream"});
 
         JButton addToOrderButton = new JButton("Add to Order");
@@ -49,7 +49,7 @@ public class AddChipsPage {
         });
 
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(4, 2));
+        panel.setLayout(new GridLayout(2, 2));
         panel.add(flavorLabel);
         panel.add(flavorComboBox);
         panel.add(addToOrderButton);
