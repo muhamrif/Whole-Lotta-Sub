@@ -48,7 +48,8 @@ public class AddOrderGui {
         addSandwichButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new AddSandwichPage(frame).showAddSandwichScreen();
+//                new AddSandwichPage(frame).showAddSandwichScreen();
+                new SignatureSandwichButtons(frame).SignatureSandwich();
             }
         });
 
@@ -162,7 +163,7 @@ public class AddOrderGui {
             itemNumber++;
         }
 
-        orderScreen.append("\n" + "Order Total: $" + total);
+        orderScreen.append("\n" + "Order Total: $" + String.format("%.2f",total));
 
     }
 }
