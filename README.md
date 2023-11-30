@@ -41,8 +41,6 @@ they can check out and the application will display their total and the items th
 ### CLI:
 #### Home Menu
 ![HomeMenu cli .png](images%2FHomeMenu%20cli%20.png)
-#### Add Drink Menu
-![drinkadd cli.png](images%2Fdrinkadd%20cli.png)
 #### Add Chips Menu
 ![addChips cli.png](images%2FaddChips%20cli.png)
 
@@ -57,7 +55,6 @@ they can check out and the application will display their total and the items th
 ![removing%20item.gif](images%2Fremoving%2520item.gif)
 ## Future Work
 -[ ] Add a database to store the menu items and the orders.
--[ ] Add a login system for the admin, to they can keep a track of orders, and change menu if needed.
 -[ ] Add pictures of the menu items.
 -[ ] Add more menu items.
 
