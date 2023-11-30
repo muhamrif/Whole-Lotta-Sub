@@ -1,5 +1,9 @@
+<div align="center">
 
 # 🥤🍟🍔**Whole-Lotta-Sub**🍔🍟🥤
+
+</div>
+
 
 ## Description
 Whole-Lotta-Sub is an application with two Interfaces, one is **CLI (Command Line Interface)** based,
