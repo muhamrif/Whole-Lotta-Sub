@@ -1,0 +1,16 @@
+                    WholeLottaSub
+                    11/29/2023
+                    123 Potato St, NY, USA
+                    123-456-7890
+Order#: 731577
+
+1 X Sandwich $16.15
+Size: LARGE
+Bread: Rye
+Meat: Extra Steak, 
+Cheese: Extra Provolone, 
+Free Toppings: Mayonnaise, Vinaigrette, Onion, Cucumbers, 
+Toasted: yes
+
+Order Total: $16.15
+                      Thank you for your order, Hope to see you soon!

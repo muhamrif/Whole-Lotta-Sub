@@ -1,7 +1,7 @@
 package com.pluralsight.LoadingBar;
 
 
-import com.pluralsight.userInterface.ConsoleColors;
+import com.pluralsight.utils.ConsoleColors;
 
 public class ProgressBar {
     public static void main() {
@@ -12,7 +12,7 @@ public class ProgressBar {
 
 
             try {
-                Thread.sleep(20);
+                Thread.sleep(10);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -33,6 +33,27 @@ public class ProgressBar {
             }
         }
     }
+
+    public static void dance(){
+        String[] dancingCharacter = {"(>^.^)>", "(^.^<)", "<(^.^<)", "^(^.^)^"};
+        int currentCharacter = 0;
+        boolean flag = true;
+        int acc =0;
+        while (flag) {
+            System.out.print("\r" + dancingCharacter[currentCharacter]);
+            currentCharacter = (currentCharacter + 1) % dancingCharacter.length;
+            if (acc==10) flag=false;
+            try {
+                Thread.sleep(200);
+                acc++;
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+        System.out.println("\n");
+    }
+
 }
 
 

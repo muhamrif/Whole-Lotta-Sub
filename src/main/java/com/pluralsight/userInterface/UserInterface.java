@@ -1,14 +1,14 @@
 package com.pluralsight.userInterface;
 
+import com.pluralsight.LoadingBar.ProgressBar;
 import com.pluralsight.fileManager.OrderFileManager;
-import com.pluralsight.graphicalUserInterface.AddDrinksPage;
 import com.pluralsight.order.*;
+import com.pluralsight.utils.ConsoleColors;
 import com.pluralsight.utils.Size;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -24,14 +24,19 @@ public class UserInterface {
     }
 
     public void HomeMenu() {
+        System.out.println("\n");
+        System.out.println(ConsoleColors.BLUE+ConsoleColors.BLUE_BACKGROUND+"--------------------------------"+ConsoleColors.RESET);
+        System.out.println(ConsoleColors.BLUE+ConsoleColors.BLUE_BACKGROUND+"--"+ConsoleColors.RESET+ConsoleColors.WHITE_UNDERLINED+ConsoleColors.WHITE_BOLD_BRIGHT+" WELCOME TO WHOLE-LOTTA-SUB!"+ConsoleColors.BLUE+ConsoleColors.BLUE_BACKGROUND+"--"+ConsoleColors.RESET);
+        System.out.println(ConsoleColors.BLUE+ConsoleColors.BLUE_BACKGROUND+"--------------------------------"+ConsoleColors.RESET);
+
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
         while (running) {
-            System.out.println("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Choose an option:"+ConsoleColors.RESET);
+            System.out.println("\n"+ ConsoleColors.WHITE_BOLD_BRIGHT+"Choose an option:"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.GREEN_BOLD_BRIGHT+"1 New Order"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.RED_BOLD_BRIGHT+"2 Exit - exit the application"+ConsoleColors.RESET);
 
-            System.out.print(ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+            System.out.print(ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection:\uD83D\uDC49\uD83C\uDFFD "+ConsoleColors.RESET);
             String input = scanner.next().trim();
 
             switch (input) {
@@ -40,6 +45,7 @@ public class UserInterface {
                     break;
                 case "2":
                     System.out.println(ConsoleColors.RED_BOLD_BRIGHT+"Exiting the application"+ConsoleColors.RESET);
+                    System.out.println("HOPE YOU ENJOY YOUR MEAL!");
                     running = false;
                     break;
                 default:
@@ -60,20 +66,23 @@ public class UserInterface {
             System.out.println(ConsoleColors.WHITE+"4 Checkout"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.RED+"0 Cancel Order"+ConsoleColors.RESET);
 
-            System.out.print("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+            System.out.print("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection:\uD83D\uDC49\uD83C\uDFFD "+ConsoleColors.RESET);
             String input = scanner.next().trim();
 
             switch (input) {
                 case "1":
-                    addSandwichMenu();
+                    customSandwiches();
+                    ProgressBar.dance();
                     printOrder();
                     break;
                 case "2":
                     addDrinkMenu();
+                    ProgressBar.dance();
                     printOrder();
                     break;
                 case "3":
                     addChipsMenu();
+                    ProgressBar.dance();
                     printOrder();
                     break;
                 case "4":
@@ -91,6 +100,206 @@ public class UserInterface {
         }
     }
 
+    public void customSandwiches(){
+        System.out.println(ConsoleColors.WHITE_BOLD_BRIGHT+"Select from the following:"+ConsoleColors.RESET);
+        System.out.println(ConsoleColors.WHITE+"1. Create a custom sandwich"+ConsoleColors.RESET + ConsoleColors.WHITE_BOLD_BRIGHT+" (You choose the bread, size, toppings, etc.)"+ConsoleColors.RESET+"\n");
+        System.out.println(ConsoleColors.WHITE+"2. The Big Hamza:"+ConsoleColors.RESET);
+        System.out.println(ConsoleColors.WHITE+"Meat: Extra Steak and Extra Bacon"+ConsoleColors.RESET);
+        System.out.println(ConsoleColors.WHITE+"Cheese: Extra Provolone Cheese"+ConsoleColors.RESET);
+        System.out.println(ConsoleColors.WHITE+"Toppings: Lettuce, Tomato, and Mayo"+ConsoleColors.RESET);
+        System.out.println(ConsoleColors.WHITE+"Bread: Toasted White Bread"+ConsoleColors.RESET+"\n");
+        System.out.println(ConsoleColors.WHITE+"3. The Akhil Special"+ConsoleColors.RESET);
+        System.out.println(ConsoleColors.WHITE+"Meat: Chicken and Salami"+ConsoleColors.RESET);
+        System.out.println(ConsoleColors.WHITE+"Cheese: Extra American Cheese"+ConsoleColors.RESET);
+        System.out.println(ConsoleColors.WHITE+"Toppings: Peppers, Jalapenos, Ketchup, and Mustard"+ConsoleColors.RESET);
+        System.out.println(ConsoleColors.WHITE+"Bread: Toasted Rye Bread"+ConsoleColors.RESET+"\n");
+        System.out.println(ConsoleColors.WHITE+"4. Ray's Potato Percussion Panini"+ConsoleColors.RESET);
+        System.out.println(ConsoleColors.WHITE+"Meat: Extra Potato"+ConsoleColors.RESET);
+        System.out.println(ConsoleColors.WHITE+"Cheese: Potato Cheese"+ConsoleColors.RESET);
+        System.out.println(ConsoleColors.WHITE+"Toppings: Potato"+ConsoleColors.RESET);
+        System.out.println(ConsoleColors.WHITE+"Bread: Toasted Potato Bread"+ConsoleColors.RESET+"\n");
+        System.out.println(ConsoleColors.RED+"5. Go back to menu"+ConsoleColors.RESET);
+
+
+        Scanner input = new Scanner(System.in);
+        boolean running = true;
+        while (running) {
+            System.out.print(ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection:\uD83D\uDC49\uD83C\uDFFD "+ConsoleColors.RESET);
+            String Userinput = input.next().trim();
+
+            switch (Userinput) {
+                case "1":
+                    addSandwichMenu();
+                    ProgressBar.main();
+                    running=false;
+                    break;
+                case "2":
+                    System.out.println("Please Select a Size for your sandwich:");
+                    System.out.println("1. 4 inch (small)");
+                    System.out.println("2. 8 inch (medium)");
+                    System.out.println("3. 12 inch (large)");
+                    System.out.println("4. Go Back To Home Menu");
+                    Size sandwichSize = Size.SMALL;
+                    boolean sizeFlag = true;
+                    while (sizeFlag) {
+
+                        System.out.print("Your Selection:\uD83D\uDC49\uD83C\uDFFD ");
+                        String SandwichInput = input.next().trim();
+
+                        switch (SandwichInput) {
+                            case "1":
+                                sandwichSize = Size.SMALL;
+                                System.out.println("small size Selected for sandwich");
+                                sizeFlag = false;
+                                break;
+                            case "2":
+                                sandwichSize = Size.MEDIUM;
+                                System.out.println("medium size Selected for sandwich");
+                                sizeFlag = false;
+                                break;
+                            case "3":
+                                sandwichSize = Size.LARGE;
+                                System.out.println("large size Selected for sandwich");
+                                sizeFlag = false;
+                                break;
+                            case "4":
+                                System.out.println("Go Back To Home Menu");
+                                sizeFlag = false;
+                                break;
+                            default:
+                                System.out.println("Invalid option, please try again.");
+                                break;
+                        }
+                    }
+                    Sandwich TheBigHamza = new Sandwich(new Bread("White"), new ArrayList<Topping>(), sandwichSize, true);
+                    TheBigHamza.addTopping(new Meat("Steak", true));
+                    TheBigHamza.addTopping(new Meat("Bacon", true));
+                    TheBigHamza.addTopping(new Cheese("Provolone", true));
+                    TheBigHamza.addTopping(new FreeTopping("Lettuce"));
+                    TheBigHamza.addTopping(new FreeTopping("Tomato"));
+                    TheBigHamza.addTopping(new FreeTopping("Mayo"));
+                    TheBigHamza.setName("The Big Hamza");
+                    sandwiches.add(TheBigHamza);
+                    orderItems.add(TheBigHamza);
+                    System.out.println(ConsoleColors.WHITE_BOLD_BRIGHT+TheBigHamza.getSize()+" "+"The Big Hamza added to order!"+ConsoleColors.RESET+"\n");
+                    ProgressBar.main();
+                    running=false;
+                    break;
+                case "3":
+                    System.out.println("Please Select a Size for your sandwich:");
+                    System.out.println("1. 4 inch (small)");
+                    System.out.println("2. 8 inch (medium)");
+                    System.out.println("3. 12 inch (large)");
+                    System.out.println("4. Go Back To Home Menu");
+                    Size sandwichSize2 = Size.SMALL;
+                    boolean sizeFlag2 = true;
+                    while (sizeFlag2) {
+
+                        System.out.print("Your Selection:\uD83D\uDC49\uD83C\uDFFD ");
+                        String SandwichInput = input.next().trim();
+
+                        switch (SandwichInput) {
+                            case "1":
+                                sandwichSize2 = Size.SMALL;
+                                System.out.println("small size Selected for sandwich");
+                                sizeFlag2 = false;
+                                break;
+                            case "2":
+                                sandwichSize2 = Size.MEDIUM;
+                                System.out.println("medium size Selected for sandwich");
+                                sizeFlag2 = false;
+                                break;
+                            case "3":
+                                sandwichSize2 = Size.LARGE;
+                                System.out.println("large size Selected for sandwich");
+                                sizeFlag2 = false;
+                                break;
+                            case "4":
+                                System.out.println("Go Back To Home Menu");
+                                sizeFlag2 = false;
+                                break;
+                            default:
+                                System.out.println("Invalid option, please try again.");
+                                break;
+                        }
+                    }
+                    Sandwich TheAkhilSpecial = new Sandwich(new Bread("Rye"), new ArrayList<Topping>(), sandwichSize2, true);
+                    TheAkhilSpecial.addTopping(new Meat("Chicken", true));
+                    TheAkhilSpecial.addTopping(new Meat("Salami", true));
+                    TheAkhilSpecial.addTopping(new Cheese("American", true));
+                    TheAkhilSpecial.addTopping(new FreeTopping("Peppers"));
+                    TheAkhilSpecial.addTopping(new FreeTopping("Jalapenos"));
+                    TheAkhilSpecial.addTopping(new FreeTopping("Ketchup"));
+                    TheAkhilSpecial.addTopping(new FreeTopping("Mustard"));
+                    TheAkhilSpecial.setName("The Akhil Special");
+                    sandwiches.add(TheAkhilSpecial);
+                    orderItems.add(TheAkhilSpecial);
+                    System.out.println(ConsoleColors.WHITE_BOLD_BRIGHT+TheAkhilSpecial.getSize()+" "+"The Akhil Special added to order!"+ConsoleColors.RESET+"\n");
+                    printOrder();
+                    ProgressBar.main();
+                    running=false;
+                    break;
+                case "4":
+                    System.out.println("Please Select a Size for your sandwich:");
+                    System.out.println("1. 4 inch (small)");
+                    System.out.println("2. 8 inch (medium)");
+                    System.out.println("3. 12 inch (large)");
+                    System.out.println("4. Go Back To Home Menu");
+                    Size sandwichSize3 = Size.SMALL;
+                    boolean sizeFlag3 = true;
+                    while (sizeFlag3) {
+
+                        System.out.print("Your Selection:\uD83D\uDC49\uD83C\uDFFD ");
+                        String SandwichInput3 = input.next().trim();
+
+                        switch (SandwichInput3) {
+                            case "1":
+                                sandwichSize3 = Size.SMALL;
+                                System.out.println("small size Selected for sandwich");
+                                sizeFlag3 = false;
+                                break;
+                            case "2":
+                                sandwichSize3 = Size.MEDIUM;
+                                System.out.println("medium size Selected for sandwich");
+                                sizeFlag3 = false;
+                                break;
+                            case "3":
+                                sandwichSize3 = Size.LARGE;
+                                System.out.println("large size Selected for sandwich");
+                                sizeFlag3 = false;
+                                break;
+                            case "4":
+                                System.out.println("Go Back To Home Menu");
+                                sizeFlag3 = false;
+                                break;
+                            default:
+                                System.out.println("Invalid option, please try again.");
+                                break;
+                        }
+                    }
+                    Sandwich RayPotatoPercussionPanini = new Sandwich(new Bread("Potato"), new ArrayList<Topping>(), sandwichSize3, true);
+                    RayPotatoPercussionPanini.addTopping(new Meat("Potato", true));
+                    RayPotatoPercussionPanini.addTopping(new Cheese("Potato Cheese", true));
+                    RayPotatoPercussionPanini.addTopping(new FreeTopping("Potato"));
+                    RayPotatoPercussionPanini.setName("Ray's Potato Percussion Panini");
+                    sandwiches.add(RayPotatoPercussionPanini);
+                    orderItems.add(RayPotatoPercussionPanini);
+                    System.out.println(ConsoleColors.WHITE_BOLD_BRIGHT+RayPotatoPercussionPanini.getSize()+" "+"Ray's Potato Percussion Panini added to order!"+ConsoleColors.RESET+"\n");
+                    ProgressBar.main();
+                    running = false;
+                    break;
+                case "5":
+                    System.out.println(ConsoleColors.RED_BOLD_BRIGHT+"Going back to menu"+ConsoleColors.RESET);
+                    running = false;
+                    break;
+                default:
+                    System.out.println(ConsoleColors.RED_BOLD_BRIGHT+"Invalid option, please try again."+ConsoleColors.RESET);
+                    break;
+            }
+        }
+
+    }
+
 
     public void addSandwichMenu() {
         Scanner input = new Scanner(System.in);
@@ -103,7 +312,7 @@ public class UserInterface {
         boolean sizeFlag = true;
         while (sizeFlag) {
 
-            System.out.print(ConsoleColors.PURPLE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+            System.out.print(ConsoleColors.PURPLE_BOLD_BRIGHT+"Your Selection:\uD83D\uDC49\uD83C\uDFFD "+ConsoleColors.RESET);
             String SandwichInput = input.next().trim();
 
             switch (SandwichInput) {
@@ -142,7 +351,7 @@ public class UserInterface {
         boolean breadFlag = true;
         while (breadFlag) {
 
-            System.out.print("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+            System.out.print("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection: \uD83D\uDC49\uD83C\uDFFD"+ConsoleColors.RESET);
             String BreadInput = input.next().trim();
 
             switch (BreadInput) {
@@ -184,7 +393,7 @@ public class UserInterface {
         boolean sandwichToasted = false;
         while (toastedFlag) {
 
-            System.out.print("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+            System.out.print("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection:\uD83D\uDC49\uD83C\uDFFD "+ConsoleColors.RESET);
             String ToastedInput = input.next().trim();
 
             switch (ToastedInput) {
@@ -217,7 +426,7 @@ public class UserInterface {
         boolean toppingFlag = true;
 
         while (toppingFlag) {
-            System.out.print("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+            System.out.print("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection:\uD83D\uDC49\uD83C\uDFFD "+ConsoleColors.RESET);
             String ToppingInput = input.next().trim();
 
             switch (ToppingInput) {
@@ -261,7 +470,7 @@ public class UserInterface {
             System.out.println(ConsoleColors.WHITE+"3. Sauces"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.WHITE+"4. Veggies"+ConsoleColors.RESET);
             System.out.println(ConsoleColors.WHITE+"5. No more toppings to add"+ConsoleColors.RESET);
-            System.out.print("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+            System.out.print("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection:\uD83D\uDC49\uD83C\uDFFD "+ConsoleColors.RESET);
             String ToppingInput = input.next().trim();
 
             switch (ToppingInput) {
@@ -276,7 +485,7 @@ public class UserInterface {
                     System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"7. Go Back To Home Menu"+ConsoleColors.RESET);
                     boolean meatFlag = true;
                     while (meatFlag) {
-                        System.out.print("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                        System.out.print("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection:\uD83D\uDC49\uD83C\uDFFD "+ConsoleColors.RESET);
                         String MeatInput = input.next().trim();
 
                         switch (MeatInput) {
@@ -287,7 +496,7 @@ public class UserInterface {
                                 System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go Back To Home Menu"+ConsoleColors.RESET);
                                 boolean extraMeatFlag = true;
                                 while (extraMeatFlag) {
-                                    System.out.print("\n"+ConsoleColors.YELLOW_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                                    System.out.print("\n"+ConsoleColors.YELLOW_BOLD_BRIGHT+"Your Selection:\uD83D\uDC49\uD83C\uDFFD "+ConsoleColors.RESET);
                                     String ExtraMeatInput = input.next().trim();
 
                                     switch (ExtraMeatInput) {
@@ -321,7 +530,7 @@ public class UserInterface {
                                 System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go Back To Home Menu"+ConsoleColors.RESET);
                                 boolean extraTurkeyFlag = true;
                                 while (extraTurkeyFlag) {
-                                    System.out.print("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                                    System.out.print("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection:\uD83D\uDC49\uD83C\uDFFD "+ConsoleColors.RESET);
                                     String ExtraTurkeyInput = input.next().trim();
 
                                     switch (ExtraTurkeyInput) {
@@ -355,7 +564,7 @@ public class UserInterface {
                                 System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go Back To Home Menu"+ConsoleColors.RESET);
                                 boolean extraRoastBeefFlag = true;
                                 while (extraRoastBeefFlag) {
-                                    System.out.print("\n"+ConsoleColors.YELLOW_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                                    System.out.print("\n"+ConsoleColors.YELLOW_BOLD_BRIGHT+"Your Selection: \uD83D\uDC49\uD83C\uDFFD"+ConsoleColors.RESET);
                                     String ExtraRoastBeefInput = input.next().trim();
 
                                     switch (ExtraRoastBeefInput) {
@@ -389,7 +598,7 @@ public class UserInterface {
                                 System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go Back To Home Menu"+ConsoleColors.RESET);
                                 boolean extraChickenFlag = true;
                                 while (extraChickenFlag) {
-                                    System.out.print("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                                    System.out.print("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection:\uD83D\uDC49\uD83C\uDFFD "+ConsoleColors.RESET);
                                     String ExtraChickenInput = input.next().trim();
 
                                     switch (ExtraChickenInput) {
@@ -423,7 +632,7 @@ public class UserInterface {
                                 System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go Back To Home Menu"+ConsoleColors.RESET);
                                 boolean extraSalamiFlag = true;
                                 while (extraSalamiFlag) {
-                                    System.out.print("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                                    System.out.print("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection: \uD83D\uDC49\uD83C\uDFFD"+ConsoleColors.RESET);
                                     String ExtraSalamiInput = input.next().trim();
 
                                     switch (ExtraSalamiInput) {
@@ -457,7 +666,7 @@ public class UserInterface {
                                 System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go Back To Home Menu"+ConsoleColors.RESET);
                                 boolean extraBaconFlag = true;
                                 while (extraBaconFlag) {
-                                    System.out.print("\n"+ConsoleColors.CYAN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                                    System.out.print("\n"+ConsoleColors.CYAN_BOLD_BRIGHT+"Your Selection:\uD83D\uDC49\uD83C\uDFFD "+ConsoleColors.RESET);
                                     String ExtraBaconInput = input.next().trim();
 
                                     switch (ExtraBaconInput) {
@@ -503,7 +712,7 @@ public class UserInterface {
                     System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"5. Go back to menu"+ConsoleColors.RESET);
                     boolean cheeseFlag = true;
                     while (cheeseFlag) {
-                        System.out.print(ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                        System.out.print(ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection:\uD83D\uDC49\uD83C\uDFFD "+ConsoleColors.RESET);
                         String CheeseInput = input.next().trim();
 
                         switch (CheeseInput) {
@@ -514,7 +723,7 @@ public class UserInterface {
                                 System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go back to menu"+ConsoleColors.RESET);
                                 boolean extraAmericanCheese = true;
                                 while (extraAmericanCheese) {
-                                    System.out.print("\n"+ConsoleColors.PURPLE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                                    System.out.print("\n"+ConsoleColors.PURPLE_BOLD_BRIGHT+"Your Selection:\uD83D\uDC49\uD83C\uDFFD "+ConsoleColors.RESET);
                                     String extraAmericanCheeseInput = input.next().trim();
 
                                     switch (extraAmericanCheeseInput) {
@@ -548,7 +757,7 @@ public class UserInterface {
                                 System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go back to menu"+ConsoleColors.RESET);
                                 boolean extraSwissCheese = true;
                                 while (extraSwissCheese) {
-                                    System.out.print("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                                    System.out.print("\n"+ConsoleColors.WHITE_BOLD_BRIGHT+"Your Selection:\uD83D\uDC49\uD83C\uDFFD "+ConsoleColors.RESET);
                                     String extraSwissCheeseInput = input.next().trim();
 
                                     switch (extraSwissCheeseInput) {
@@ -582,7 +791,7 @@ public class UserInterface {
                                 System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go back to menu"+ConsoleColors.RESET);
                                 boolean extraCheddarCheese = true;
                                 while (extraCheddarCheese) {
-                                    System.out.print("\n"+ConsoleColors.PURPLE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                                    System.out.print("\n"+ConsoleColors.PURPLE_BOLD_BRIGHT+"Your Selection:\uD83D\uDC49\uD83C\uDFFD "+ConsoleColors.RESET);
                                     String extraCheddarCheeseInput = input.next().trim();
 
                                     switch (extraCheddarCheeseInput) {
@@ -616,7 +825,7 @@ public class UserInterface {
                                 System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go back to menu"+ConsoleColors.RESET);
                                 boolean extraProvoloneCheese = true;
                                 while (extraProvoloneCheese) {
-                                    System.out.print("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                                    System.out.print("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: \uD83D\uDC49\uD83C\uDFFD"+ConsoleColors.RESET);
                                     String extraProvoloneCheeseInput = input.next().trim();
 
                                     switch (extraProvoloneCheeseInput) {
@@ -664,7 +873,7 @@ public class UserInterface {
                     System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"7. Go back to menu"+ConsoleColors.RESET);
                     boolean sauceFlag = true;
                     while (sauceFlag) {
-                        System.out.print("\n"+ConsoleColors.PURPLE_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                        System.out.print("\n"+ConsoleColors.PURPLE_BOLD_BRIGHT+"Your Selection:\uD83D\uDC49\uD83C\uDFFD "+ConsoleColors.RESET);
                         String SauceInput = input.next().trim();
 
                         switch (SauceInput) {
@@ -729,7 +938,7 @@ public class UserInterface {
                     System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"X. Go back to menu"+ConsoleColors.RESET);
                     boolean veggieFlag = true;
                     while (veggieFlag) {
-                        System.out.print("\n"+ConsoleColors.CYAN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+                        System.out.print("\n"+ConsoleColors.CYAN_BOLD_BRIGHT+"Your Selection:\uD83D\uDC49\uD83C\uDFFD "+ConsoleColors.RESET);
                         String VeggieInput = input.next().trim();
 
                         switch (VeggieInput.toLowerCase()) {
@@ -823,7 +1032,7 @@ public class UserInterface {
         Size drinkSize = Size.SMALL;
         boolean sizeFlag = true;
         while (sizeFlag) {
-            System.out.println("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+            System.out.println("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection:\uD83D\uDC49\uD83C\uDFFD "+ConsoleColors.RESET);
             String DrinkInput = scanner.next().trim();
 
             switch (DrinkInput) {
@@ -921,7 +1130,7 @@ public class UserInterface {
 
         while (flag) {
 
-            System.out.print("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection: "+ConsoleColors.RESET);
+            System.out.print("\n"+ConsoleColors.GREEN_BOLD_BRIGHT+"Your Selection:\uD83D\uDC49\uD83C\uDFFD "+ConsoleColors.RESET);
             String ChipsInput = input.next().trim();
 
             switch (ChipsInput) {
@@ -967,18 +1176,31 @@ public class UserInterface {
 
     }
 
+//    public void editOrder(){
+//        System.out.println(ConsoleColors.WHITE_BOLD_BRIGHT+"Would you like to remove items from your order?"+ConsoleColors.RESET);
+//        System.out.println(ConsoleColors.WHITE+"1. Yes"+ConsoleColors.RESET);
+//        System.out.println(ConsoleColors.WHITE+"2. No"+ConsoleColors.RESET);
+//        System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT+"3. Go Back To Home Menu"+ConsoleColors.RESET);
+//        boolean editFlag = true;
+//        Scanner input = new Scanner(System.in);
+//        String editInput = input.next().trim();
+//        while (editFlag){
+//
+//            switch (editInput){
+//                case "1":
+//                    System.out.println(ConsoleColors.WHITE_BOLD_BRIGHT+"What would you like to remove?"+ConsoleColors.RESET);
+//                    printOrder();
+//
+//
+//            }
+//        }
+//
+//
+//
+//
+//    }
 
-    public void processRemoveSandwichFromOrder(Sandwich sandwich) {
 
-    }
-
-    public void processRemoveDrinkFromOrder(Drink drink) {
-
-    }
-
-    public void processRemoveChipsFromOrder(Chips chips) {
-
-    }
 
     public void processCheckout() {
         Order order = new Order(sandwiches, drinks, chips);
