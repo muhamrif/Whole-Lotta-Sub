@@ -35,11 +35,10 @@ they can check out and the application will display their total and the items th
 ![Pluralsight](https://img.shields.io/badge/Pluralsight-EE3057?style=for-the-badge&logo=pluralsight&logoColor=white)
 </div>
 
-
-## Class Diagram
-![WholeLottaSubFinalIteration.drawio.png](UML%2FWholeLottaSubFinalIteration.drawio.png)
 ## Flow of Order
 ![Flow Of Order.png](images%2FFlow%20Of%20Order.png)
+## Class Diagram
+![WholeLottaSubFinalIteration.drawio.png](UML%2FWholeLottaSubFinalIteration.drawio.png)
 
 ## Demo
 ### CLI:
@@ -59,7 +58,6 @@ they can check out and the application will display their total and the items th
 ![removing%20item.gif](images%2Fremoving%2520item.gif)
 ## Future Work
 -[ ] Add pictures of the menu items, Add more menu items.
-- 
 ## Development Team
 - [@muhmarif](https://www.github.com/muhamrif)
 - [@akhilsomaiya07](https://github.com/akhilsomaiya07) 
