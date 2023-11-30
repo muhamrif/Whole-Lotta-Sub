@@ -54,10 +54,8 @@ they can check out and the application will display their total and the items th
 #### Remove Item
 ![removing%20item.gif](images%2Fremoving%2520item.gif)
 ## Future Work
--[ ] Add a database to store the menu items and the orders.
--[ ] Add pictures of the menu items.
--[ ] Add more menu items.
-
+-[ ] Add pictures of the menu items, Add more menu items.
+- 
 ## Development Team
 - [@muhmarif](https://www.github.com/muhamrif)
 - [@akhilsomaiya07](https://github.com/akhilsomaiya07) 
