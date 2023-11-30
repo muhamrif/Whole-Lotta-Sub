@@ -67,37 +67,3 @@ public class AddDrinksPage {
         frame.repaint();
     }
 }
-
-
-
-//    JLabel helloLabel = new JLabel("Please Select a Signature Sandwich or Build Your Own");
-//        helloLabel.setHorizontalAlignment(JLabel.CENTER);
-//                helloLabel.setFont(new Font("Arial", Font.BOLD, 20));
-//                helloLabel.setForeground(Color.BLUE);
-//                frame.add(helloLabel, BorderLayout.NORTH);
-//
-//                JPanel buttonPanel = new JPanel();
-//                JButton newOrderButton = new JButton("The Big Hamza: " +
-//                "Extra Steak and Extra Bacon," +
-//                "with Extra Provolone Cheese," +
-//                "Topped with Lettuce, Tomato, and Mayo,"
-//                + "on a Toasted White Bread");
-//                newOrderButton.setBackground(Color.GREEN);
-//                newOrderButton.setFocusPainted(true);
-//
-//                JButton newOrderButton2 = new JButton("The Akhil Special: " +
-//                "Chicken and Salami" +
-//                "with Extra American Cheese," +
-//                "Topped with Peppers, Jalapenos, Ketchup, and Mustard,"
-//                + "on a Toasted Rye Bread");
-//                newOrderButton2.setBackground(Color.GREEN);
-//                newOrderButton2.setFocusPainted(true);
-//
-//                JButton newOrderButton3 = new JButton("Add Custom Sandwich");
-//                newOrderButton3.setBackground(Color.GREEN);
-//                newOrderButton3.setFocusPainted(true);
-//
-//
-//                JButton exitButton = new JButton("Back to Menu");
-//                exitButton.setBackground(Color.RED);
-//                exitButton.setFocusPainted(false);
