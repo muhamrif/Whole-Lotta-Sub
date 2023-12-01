@@ -6,7 +6,8 @@
 
 
 ## Description
-Whole-Lotta-Sub is an application with **CLI (Command Line Interface)**.
+Whole-Lotta-Sub is an application with two Interfaces, one is **CLI (Command Line Interface)** based,
+and the second is **GUI (Graphical User Interface)**.
 It is an application that allows users to order sandwiches,
 drinks, and chips from a given menu.
 The user can choose from a variety of subs or create their own and add them to their cart.
@@ -40,14 +41,23 @@ they can check out and the application will display their total and the items th
 ![WholeLottaSubFinalIteration.drawio.png](UML%2FWholeLottaSubFinalIteration.drawio.png)
 
 ## Demo
+### CLI:
 #### Home Menu
 ![HomeMenu cli .png](images%2FHomeMenu%20cli%20.png)
 #### Add Chips Menu
 ![addChips cli.png](images%2FaddChips%20cli.png)
 
+### GUI:
+#### Add Drink
+![adding%20drink%20gui.gif](images%2Fadding%2520drink%2520gui.gif)
+#### Add Chips
+![removing%20item.gif](images%2Fremoving%2520item.gif)
+#### Add Sandwich
+![adding%20sandwich.gif](images%2Fadding%2520sandwich.gif)
+#### Remove Item
+![removing%20item.gif](images%2Fremoving%2520item.gif)
 ## Future Work
-- Add more menu items.
-- Add a Admin User Interface where the admin can view all the past order, along with updating the menu.
+-[ ] Add pictures of the menu items, Add more menu items.
 ## Development Team
 - [@muhmarif](https://www.github.com/muhamrif)
 - [@akhilsomaiya07](https://github.com/akhilsomaiya07) 
@@ -55,7 +65,3 @@ they can check out and the application will display their total and the items th
 ## Feedback
 
 If you have any feedback, please reach out to at muhammad.hamza6415@gmail.com
-
-
-
-![One more thing.png](images%2FOne%20more%20thing.png)
