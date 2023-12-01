@@ -46,7 +46,8 @@ they can check out and the application will display their total and the items th
 ![addChips cli.png](images%2FaddChips%20cli.png)
 
 ## Future Work
--[ ] Add pictures of the menu items, Add more menu items.
+- Add more menu items.
+- Add a Admin User Interface where the admin can view all the past order, along with updating the menu.
 ## Development Team
 - [@muhmarif](https://www.github.com/muhamrif)
 - [@akhilsomaiya07](https://github.com/akhilsomaiya07) 
@@ -54,3 +55,7 @@ they can check out and the application will display their total and the items th
 ## Feedback
 
 If you have any feedback, please reach out to at muhammad.hamza6415@gmail.com
+
+
+
+![One more thing.png](images%2FOne%20more%20thing.png)
