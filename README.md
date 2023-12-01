@@ -66,7 +66,3 @@ they can check out and the application will display their total and the items th
 ## Feedback
 
 If you have any feedback, please reach out to at muhammad.hamza6415@gmail.com
-
-
-
-![One more thing.png](images%2FOne%20more%20thing.png)
