@@ -1,0 +1,31 @@
+                    WholeLottaSub
+                    12/1/2023
+                    123 Potato St, NY, USA
+                    123-456-7890
+Order#: 497772
+
+1 X BIG HAMZA $9.55
+Size: SMALL
+Bread: White
+Meat: Extra Chicken, Extra Bacon, 
+Cheese: Extra Swiss, 
+Free Toppings: Mayonnaise, Lettuce, Tomato, 
+Toasted: yes
+
+1 X RAY'S POTATO PERCUSSION PANINI $17.5
+Size: LARGE
+Bread: Potato Bread
+Meat: Extra Potato, 
+Cheese: Potato, Potato, 
+Free Toppings: Potato, Potato, 
+Toasted: yes
+
+1 X Drink $2.5
+Size: MEDIUM
+Brand: Orange
+
+1 X Chips $1.5
+Brand: Salt & Vinegar
+
+Order Total: $31.05
+                      Thank you for your order, Hope to see you soon!

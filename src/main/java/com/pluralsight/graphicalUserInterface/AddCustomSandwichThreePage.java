@@ -213,7 +213,7 @@ public class AddCustomSandwichThreePage {
 
                 AddOrderGui.sandwich.add(sandwich);
                 AddOrderGui.order.add(sandwich);
-                sandwich.setName("Big Hamza");
+                sandwich.setName("Ray's Potato Percussion Panini");
                 JOptionPane.showMessageDialog(frame, "Added Ray's Potato Percussion Panini to the order:\n" + sandwich);
                 frame.setVisible(false);
                 frame.dispose();
