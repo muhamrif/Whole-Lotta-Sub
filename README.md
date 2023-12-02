@@ -54,6 +54,44 @@ they can check out and the application will display their total and the items th
 ![adding%20sandwich.gif](images%2Fadding%2520sandwich.gif)
 #### Remove Item
 ![removing%20item.gif](images%2Fremoving%2520item.gif)
+
+## Run Locally (CLI)
+
+Clone the project
+```bash
+  git clone https://github.com/muhamrif/Whole-Lotta-Sub
+```
+Go to the src Directory
+```bash
+  cd src/main/java/com/pluralsight/StartApplication/WholeLottaSub.java
+```
+Complile the code
+```bash
+ javac WholeLottaSub.java
+```
+Start the CLI program
+```bash
+  java WholeLottaSub.Class
+```
+
+## Run Locally (GUI)
+
+Clone the project
+```bash
+  git clone https://github.com/muhamrif/Whole-Lotta-Sub
+```
+Go to the src Directory
+```bash
+  cd src/main/java/com/pluralsight/StartApplication/WholeLottaSubGUI.java
+```
+Complile the code
+```bash
+ javac WholeLottaSubGUI.java
+```
+Start the CLI program
+```bash
+  java WholeLottaSubGUI.Class
+```
 ## Future Work
 - Add more menu items.
 - Add a Admin User Interface where the admin can view all the past order, along with updating the menu.
