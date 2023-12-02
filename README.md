@@ -50,8 +50,6 @@ they can check out and the application will display their total and the items th
 ### GUI:
 #### Add Drink
 ![adding%20drink%20gui.gif](images%2Fadding%2520drink%2520gui.gif)
-#### Add Chips
-![removing%20item.gif](images%2Fremoving%2520item.gif)
 #### Add Sandwich
 ![adding%20sandwich.gif](images%2Fadding%2520sandwich.gif)
 #### Remove Item
